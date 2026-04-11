@@ -986,11 +986,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(500).send('Error loading admin 2FA page');
     }
   });
-Initialize Network Integration Systems
-  const wsNetworkServer = new WebSocketNetworkServer(httpServer);
-  setSyncServices(wsNetworkServer);
-  
-  // 
+
   const httpServer = createServer(app);
   
   // WebSocket server for real-time price updates
