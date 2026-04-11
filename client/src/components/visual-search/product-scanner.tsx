@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Separator } from '@/components/ui/separator';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
+import { PermissionDialog } from '@/components/common/PermissionDialog';
 
 export interface IdentifiedProduct {
   name: string;
@@ -33,33 +34,56 @@ export function ProductScanner({ onResultsFound }: VisualSearchProps) {
   const [isProcessing, setIsProcessing] = useState(false);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [captureMethod, setCaptureMethod] = useState<'camera' | 'upload' | null>(null);
+  const [showCameraDialog, setShowCameraDialog] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { toast } = useToast();
 
+  const activateCamera = async () => {
+    setIsCapturing(true);
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ 
+        video: { facingMode: { ideal: 'environment' } }
+      });
+      if (videoRef.current) {
+        videoRef.current.srcObject = stream;
+      }
+    } catch (error) {
+      console.error('Error accessing camera:', error);
+      toast({
+        title: 'Camera Access Failed',
+        description: 'Camera permission was denied. You can upload an image instead, or enable camera access in your device settings.',
+        variant: 'destructive',
+      });
+      setIsCapturing(false);
+      setCaptureMethod(null);
+    }
+  };
+
   const startCapture = async (method: 'camera' | 'upload') => {
     setCaptureMethod(method);
     
     if (method === 'camera') {
-      setIsCapturing(true);
+      // Check if permission already granted — skip dialog if so
       try {
-        const stream = await navigator.mediaDevices.getUserMedia({ 
-          video: { facingMode: { ideal: 'environment' } }
-        });
-        
-        if (videoRef.current) {
-          videoRef.current.srcObject = stream;
+        const status = await navigator.permissions.query({ name: 'camera' as PermissionName });
+        if (status.state === 'granted') {
+          await activateCamera();
+        } else if (status.state === 'denied') {
+          toast({
+            title: 'Camera Access Blocked',
+            description: 'Camera is blocked. Go to Settings → Permissions → Camera to enable it, or upload an image instead.',
+            variant: 'destructive',
+          });
+          setCaptureMethod(null);
+        } else {
+          // Show rationale dialog before prompting
+          setShowCameraDialog(true);
         }
-      } catch (error) {
-        console.error('Error accessing camera:', error);
-        toast({
-          title: 'Camera Access Failed',
-          description: 'Unable to access your camera. Please check permissions.',
-          variant: 'destructive',
-        });
-        setIsCapturing(false);
-        setCaptureMethod(null);
+      } catch {
+        // Permissions API not supported — show dialog anyway
+        setShowCameraDialog(true);
       }
     } else if (method === 'upload') {
       fileInputRef.current?.click();
@@ -173,6 +197,13 @@ export function ProductScanner({ onResultsFound }: VisualSearchProps) {
   };
 
   return (
+    <>
+    <PermissionDialog
+      type="camera"
+      open={showCameraDialog}
+      onAllow={async () => { setShowCameraDialog(false); await activateCamera(); }}
+      onDeny={() => { setShowCameraDialog(false); setCaptureMethod(null); }}
+    />
     <Card className="w-full max-w-xl mx-auto">
       <CardHeader>
         <CardTitle className="flex items-center">
@@ -263,5 +294,6 @@ export function ProductScanner({ onResultsFound }: VisualSearchProps) {
       {/* Hidden canvas for image capture */}
       <canvas ref={canvasRef} className="hidden" />
     </Card>
+    </>
   );
 }

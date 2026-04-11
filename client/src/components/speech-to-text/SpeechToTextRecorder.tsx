@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Mic, MicOff, Copy, Save, Trash2, Download } from 'lucide-react';
+import { PermissionDialog } from '@/components/common/PermissionDialog';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -46,6 +47,7 @@ const SpeechToTextRecorder: React.FC<SpeechToTextRecorderProps> = ({
   const [transcript, setTranscript] = useState('');
   const [language, setLanguage] = useState(initialLanguage);
   const [isSupported, setIsSupported] = useState(true);
+  const [showMicDialog, setShowMicDialog] = useState(false);
   const { toast } = useToast();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   
@@ -100,16 +102,32 @@ const SpeechToTextRecorder: React.FC<SpeechToTextRecorderProps> = ({
     speechToText.setLanguage(language);
   }, [language]);
   
-  const startListening = () => {
-    if (!isSupported) return;
-    
+  const doStartListening = () => {
     speechToText.start();
     setIsListening(true);
-    
-    toast({
-      title: "Listening Started",
-      description: "Speak now - your words will appear as text.",
-    });
+    toast({ title: "Listening Started", description: "Speak now - your words will appear as text." });
+  };
+
+  const startListening = async () => {
+    if (!isSupported) return;
+    // Check microphone permission — show rationale dialog if not yet granted
+    try {
+      const status = await navigator.permissions.query({ name: 'microphone' as PermissionName });
+      if (status.state === 'granted') {
+        doStartListening();
+      } else if (status.state === 'denied') {
+        toast({
+          title: 'Microphone Blocked',
+          description: 'Enable microphone in Settings → Permissions → Microphone, or type your search instead.',
+          variant: 'destructive',
+        });
+      } else {
+        setShowMicDialog(true);
+      }
+    } catch {
+      // Permissions API not supported — show dialog anyway
+      setShowMicDialog(true);
+    }
   };
   
   const stopListening = () => {
@@ -199,6 +217,22 @@ const SpeechToTextRecorder: React.FC<SpeechToTextRecorderProps> = ({
   };
   
   return (
+    <>
+    <PermissionDialog
+      type="microphone"
+      open={showMicDialog}
+      onAllow={async () => {
+        setShowMicDialog(false);
+        try {
+          const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+          stream.getTracks().forEach(t => t.stop());
+          doStartListening();
+        } catch {
+          toast({ title: 'Microphone Denied', description: 'You can type your search instead.', variant: 'destructive' });
+        }
+      }}
+      onDeny={() => setShowMicDialog(false)}
+    />
     <Card className="w-full">
       <CardHeader className="pb-3">
         <div className="flex items-center justify-between">
@@ -271,6 +305,7 @@ const SpeechToTextRecorder: React.FC<SpeechToTextRecorderProps> = ({
         </CardFooter>
       )}
     </Card>
+    </>
   );
 };
 
