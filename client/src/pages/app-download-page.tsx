@@ -72,23 +72,17 @@ export default function AppDownloadPage() {
             </div>
           </div>
           
-          <div className="flex justify-center">
-            <div className="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px]">
-              <div className="h-[32px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -right-[17px] top-[72px] rounded-l-lg"></div>
-              <div className="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -right-[17px] top-[124px] rounded-l-lg"></div>
-              <div className="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -right-[17px] top-[178px] rounded-l-lg"></div>
-              <div className="h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[142px] rounded-r-lg"></div>
-              <div className="rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-800">
-                <img 
-                  src="/images/app-screenshot.png" 
-                  alt="Tesco Price Comparison App" 
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.currentTarget.src = 'https://via.placeholder.com/272x572/0F4C81/FFFFFF?text=Tesco+App';
-                  }}
-                />
-              </div>
+          <div className="flex flex-col items-center gap-4">
+            <div className="bg-white border-2 border-gray-200 rounded-xl p-4 shadow-md">
+              <p className="text-sm text-center text-gray-500 mb-3 font-medium">Scan to open on your phone</p>
+              <img
+                src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(window.location.origin + '/app-download')}&color=00539f&bgcolor=ffffff`}
+                alt="QR Code to download the app"
+                className="w-48 h-48 mx-auto"
+              />
+              <p className="text-xs text-center text-gray-400 mt-3">{window.location.origin}/app-download</p>
             </div>
+            <p className="text-sm text-gray-500 text-center">Point your camera at the QR code<br/>to open the app instantly</p>
           </div>
         </div>
       </div>

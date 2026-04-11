@@ -18,6 +18,7 @@ import GorillaLeadsDashboard from "./pages/gorillaleads-dashboard";
 import SpeechToTextPage from "@/pages/speech-to-text-page";
 import LoginPage from "./pages/login";
 import OAuthCallback from "./pages/auth/callback";
+import AppDownloadPage from "@/pages/app-download-page";
 
 import { useEffect, useState } from "react";
 import { getProductRecommendations } from "@/lib/ai";
@@ -390,6 +391,9 @@ function AppContent() {
           <Route path="/speech-to-text" component={SpeechToTextPage} />
           <Route path="/legal" component={LegalDocumentsPage} />
           <Route path="/admin/ai-dashboard" component={AIAdminDashboard} />
+          <Route path="/app-download" component={AppDownloadPage} />
+          <Route path="/download" component={AppDownloadPage} />
+          <Route path="/app" component={AppDownloadPage} />
           <Route path="/tesco-vendor">
             {() => {
               // Redirect to the direct HTML vendor login page
