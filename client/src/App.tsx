@@ -19,6 +19,9 @@ import SpeechToTextPage from "@/pages/speech-to-text-page";
 import LoginPage from "./pages/login";
 import OAuthCallback from "./pages/auth/callback";
 import AppDownloadPage from "@/pages/app-download-page";
+import PrivacyPolicyPage from "@/pages/privacy-policy";
+import TermsOfServicePage from "@/pages/terms-of-service";
+import DataSafetyPage from "@/pages/data-safety";
 
 import { useEffect, useState } from "react";
 import { getProductRecommendations } from "@/lib/ai";
@@ -394,6 +397,9 @@ function AppContent() {
           <Route path="/app-download" component={AppDownloadPage} />
           <Route path="/download" component={AppDownloadPage} />
           <Route path="/app" component={AppDownloadPage} />
+          <Route path="/privacy" component={PrivacyPolicyPage} />
+          <Route path="/terms" component={TermsOfServicePage} />
+          <Route path="/data-safety" component={DataSafetyPage} />
           <Route path="/tesco-vendor">
             {() => {
               // Redirect to the direct HTML vendor login page
