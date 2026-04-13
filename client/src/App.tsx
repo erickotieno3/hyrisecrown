@@ -23,6 +23,7 @@ import PrivacyPolicyPage from "@/pages/privacy-policy";
 import TermsOfServicePage from "@/pages/terms-of-service";
 import DataSafetyPage from "@/pages/data-safety";
 import PermissionsSettingsPage from "@/pages/permissions-settings";
+import AdminReleaseDashboard from "@/pages/admin-release-dashboard";
 
 import { useEffect, useState } from "react";
 import { getProductRecommendations } from "@/lib/ai";
@@ -402,6 +403,7 @@ function AppContent() {
           <Route path="/terms" component={TermsOfServicePage} />
           <Route path="/data-safety" component={DataSafetyPage} />
           <Route path="/permissions" component={PermissionsSettingsPage} />
+          <Route path="/admin/release" component={AdminReleaseDashboard} />
           <Route path="/tesco-vendor">
             {() => {
               // Redirect to the direct HTML vendor login page

@@ -2,6 +2,7 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import security from "./security";
+import playStoreRouter from "./play-store-api";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -101,6 +102,9 @@ app.use((req, res, next) => {
 });
 
 (async () => {
+  // Play Store release API (admin only)
+  app.use("/api/play-store", playStoreRouter);
+
   const server = await registerRoutes(app);
 
   // Add security error handler
