@@ -24,6 +24,8 @@ import TermsOfServicePage from "@/pages/terms-of-service";
 import DataSafetyPage from "@/pages/data-safety";
 import PermissionsSettingsPage from "@/pages/permissions-settings";
 import AdminReleaseDashboard from "@/pages/admin-release-dashboard";
+import MedisaveStorePage from "@/pages/medisave-store";
+import { MedisaveBanner } from "@/components/affiliate/MedisaveBanner";
 
 import { useEffect, useState } from "react";
 import { getProductRecommendations } from "@/lib/ai";
@@ -321,8 +323,13 @@ function Footer() {
           </div>
           
           <div>
-            <h3 className="font-semibold text-lg mb-4">Legal</h3>
+            <h3 className="font-semibold text-lg mb-4">Partners & Legal</h3>
             <ul className="space-y-2">
+              <li>
+                <Link href="/medisave">
+                  <span className="text-gray-600 hover:text-blue-600 cursor-pointer">🏥 Medisave UK <span className="text-xs text-gray-400">(Affiliate)</span></span>
+                </Link>
+              </li>
               <li>
                 <Link href="/terms">
                   <span className="text-gray-600 hover:text-blue-600 cursor-pointer">Terms of Service</span>
@@ -331,6 +338,11 @@ function Footer() {
               <li>
                 <Link href="/privacy">
                   <span className="text-gray-600 hover:text-blue-600 cursor-pointer">Privacy Policy</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/data-safety">
+                  <span className="text-gray-600 hover:text-blue-600 cursor-pointer">Data Safety</span>
                 </Link>
               </li>
             </ul>
@@ -373,6 +385,7 @@ function AppContent() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
+      <MedisaveBanner />
       
       <main className="flex-grow">
         <Switch>
@@ -404,6 +417,7 @@ function AppContent() {
           <Route path="/data-safety" component={DataSafetyPage} />
           <Route path="/permissions" component={PermissionsSettingsPage} />
           <Route path="/admin/release" component={AdminReleaseDashboard} />
+          <Route path="/medisave" component={MedisaveStorePage} />
           <Route path="/tesco-vendor">
             {() => {
               // Redirect to the direct HTML vendor login page

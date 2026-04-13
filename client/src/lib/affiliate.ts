@@ -201,3 +201,36 @@ async function trackAffiliatePageView(): Promise<void> {
     }
   }
 }
+
+// ─── Medisave UK — 90-day referral window ────────────────────────────────────
+
+const MEDISAVE_KEY = 'medisave_click_ts';
+const MEDISAVE_90_DAYS_MS = 90 * 24 * 60 * 60 * 1000;
+
+export function recordMedisaveClick(): void {
+  try {
+    localStorage.setItem(MEDISAVE_KEY, Date.now().toString());
+  } catch {}
+}
+
+export function isMedisaveReferralActive(): boolean {
+  try {
+    const ts = localStorage.getItem(MEDISAVE_KEY);
+    if (!ts) return false;
+    return Date.now() - parseInt(ts, 10) <= MEDISAVE_90_DAYS_MS;
+  } catch {
+    return false;
+  }
+}
+
+export function getMedisaveDaysRemaining(): number {
+  try {
+    const ts = localStorage.getItem(MEDISAVE_KEY);
+    if (!ts) return 0;
+    const elapsed = Date.now() - parseInt(ts, 10);
+    const remaining = MEDISAVE_90_DAYS_MS - elapsed;
+    return remaining > 0 ? Math.ceil(remaining / (24 * 60 * 60 * 1000)) : 0;
+  } catch {
+    return 0;
+  }
+}
