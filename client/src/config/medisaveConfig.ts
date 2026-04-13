@@ -53,6 +53,100 @@ export function buildMedisaveUrl(
   return url.toString();
 }
 
+// ─── Procedure → Product mapping ─────────────────────────────────────────────
+export const PROCEDURE_PRODUCT_MAP: Record<string, string[]> = {
+  cardiac:      ["stethoscopes", "ecg", "blood-pressure"],
+  respiratory:  ["stethoscopes", "pulse-oximeters", "nebulisers"],
+  diagnostic:   ["otoscopes", "ophthalmoscopes", "diagnostic-sets"],
+  surgery:      ["gloves", "surgical-instruments", "disposables"],
+  emergency:    ["first-aid", "aed", "emergency-kits"],
+  nursing:      ["gloves", "disposables", "nursing-equipment"],
+  general:      ["diagnostic-sets", "gloves", "disposables"],
+};
+
+// ─── Product interface ────────────────────────────────────────────────────────
+export interface MedisaveProduct {
+  id: string;
+  name: string;
+  brand: string;
+  price: number;
+  image: string;
+  slug: string;
+  category: string;
+  procedures: string[];
+  badge?: string;
+}
+
+// ─── Featured products ────────────────────────────────────────────────────────
+export const FEATURED_PRODUCTS: MedisaveProduct[] = [
+  {
+    id: "littmann-classic",
+    name: "Littmann Classic III Stethoscope",
+    brand: "3M Littmann",
+    price: 89.99,
+    image: "https://www.medisave.co.uk/images/littmann-classic-iii.jpg",
+    slug: "littmann-classic-iii-stethoscope",
+    category: "stethoscopes",
+    procedures: ["cardiac", "respiratory", "general"],
+    badge: "Best Seller",
+  },
+  {
+    id: "welch-allyn-otoscope",
+    name: "Welch Allyn Diagnostic Otoscope",
+    brand: "Welch Allyn",
+    price: 124.99,
+    image: "https://www.medisave.co.uk/images/welch-allyn-otoscope.jpg",
+    slug: "welch-allyn-diagnostic-otoscope",
+    category: "otoscopes",
+    procedures: ["diagnostic"],
+    badge: "Professional",
+  },
+  {
+    id: "latex-gloves-box",
+    name: "Medical Latex Examination Gloves (100)",
+    brand: "Medisave",
+    price: 12.99,
+    image: "https://www.medisave.co.uk/images/latex-gloves.jpg",
+    slug: "medical-latex-examination-gloves",
+    category: "gloves",
+    procedures: ["surgery", "nursing", "general"],
+    badge: "Essential",
+  },
+  {
+    id: "hse-first-aid-kit",
+    name: "HSE First Aid Kit (10 Person)",
+    brand: "Medisave",
+    price: 24.99,
+    image: "https://www.medisave.co.uk/images/hse-first-aid-kit.jpg",
+    slug: "hse-first-aid-kit-10-person",
+    category: "first-aid",
+    procedures: ["emergency"],
+    badge: "HSE Compliant",
+  },
+  {
+    id: "welch-allyn-diagnostic-set",
+    name: "Welch Allyn 3.5V Diagnostic Set",
+    brand: "Welch Allyn",
+    price: 249.99,
+    image: "https://www.medisave.co.uk/images/welch-allyn-set.jpg",
+    slug: "welch-allyn-diagnostic-set",
+    category: "diagnostic-sets",
+    procedures: ["diagnostic", "general"],
+    badge: "Bundle Deal",
+  },
+  {
+    id: "omron-m7-bp",
+    name: "Omron M7 Intelli IT Blood Pressure Monitor",
+    brand: "Omron",
+    price: 59.99,
+    image: "https://www.medisave.co.uk/images/omron-m7.jpg",
+    slug: "omron-m7-intelli-it-blood-pressure-monitor",
+    category: "blood-pressure",
+    procedures: ["cardiac", "general"],
+    badge: "Clinically Validated",
+  },
+];
+
 export const MEDISAVE_CATEGORIES = [
   {
     id: "stethoscopes",
