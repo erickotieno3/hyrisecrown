@@ -316,10 +316,34 @@ export default function PrivacyPolicyPage() {
           </CardContent>
         </Card>
 
+        {/* Affiliate Partnerships — Medisave UK (required disclosure) */}
+        <Card id="affiliate-tracking" className="border-amber-200">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <span className="inline-flex items-center rounded px-1.5 py-0.5 text-[10px] font-bold bg-amber-100 text-amber-700 border border-amber-300">AD</span>
+              9. Affiliate Partnerships
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="text-sm space-y-3">
+            <p>Our app participates in the <strong>Medisave UK affiliate programme</strong> through Shopify Collabs. When you click on product links in our app, we may receive a <strong>5% commission</strong> on qualifying purchases at <strong>no extra cost to you</strong>.</p>
+            <div className="space-y-2">
+              <p><strong>What is tracked:</strong> We use tracking links that include a unique affiliate identifier. Medisave UK may place cookies in your browser for up to <strong>90 days</strong> to track referrals from our app.</p>
+              <p><strong>What is NOT shared:</strong> We do not share your personal data with Medisave UK. The only data transmitted is anonymised click and purchase data for commission tracking purposes.</p>
+              <p><strong>Opting out:</strong> You can opt out by using private/incognito mode, clearing your browser cookies, or avoiding the affiliate links in the <a href="/medisave" className="text-blue-600 underline">Medisave store page</a>.</p>
+            </div>
+            <div className="bg-amber-50 border border-amber-200 rounded p-3 space-y-1 text-xs text-amber-900">
+              <p><strong>Disclosure required by UK ASA CAP Code Rule 2.1 and FTC 16 CFR Part 255.</strong></p>
+              <p>For Medisave UK's own privacy policy, visit:{" "}
+                <a href="https://www.medisave.co.uk/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline text-amber-700">medisave.co.uk/privacy-policy</a>
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Contact */}
         <Card>
           <CardHeader>
-            <CardTitle>9. Contact Us</CardTitle>
+            <CardTitle>10. Contact Us</CardTitle>
           </CardHeader>
           <CardContent className="text-sm space-y-1">
             <p><strong>Data Controller:</strong> Hyrise Crown</p>
