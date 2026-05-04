@@ -25,6 +25,7 @@ import DataSafetyPage from "@/pages/data-safety";
 import PermissionsSettingsPage from "@/pages/permissions-settings";
 import AdminReleaseDashboard from "@/pages/admin-release-dashboard";
 import MedisaveStorePage from "@/pages/medisave-store";
+import PlayConsoleHandoffPage from "@/pages/play-console-handoff";
 import { MedisaveBanner } from "@/components/affiliate/MedisaveBanner";
 
 import { useEffect, useState } from "react";
@@ -418,6 +419,7 @@ function AppContent() {
           <Route path="/permissions" component={PermissionsSettingsPage} />
           <Route path="/admin/release" component={AdminReleaseDashboard} />
           <Route path="/medisave" component={MedisaveStorePage} />
+        <Route path="/play-console-handoff" component={PlayConsoleHandoffPage} />
           <Route path="/tesco-vendor">
             {() => {
               // Redirect to the direct HTML vendor login page
