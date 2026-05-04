@@ -14,7 +14,7 @@ export default function TermsOfServicePage() {
         </Link>
         <div>
           <h1 className="text-3xl font-bold">Terms of Service</h1>
-          <p className="text-muted-foreground">Last Updated: April 11, 2026</p>
+          <p className="text-muted-foreground">Last Updated: May 4, 2026</p>
         </div>
       </div>
 
