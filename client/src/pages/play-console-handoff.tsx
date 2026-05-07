@@ -34,6 +34,18 @@ export default function PlayConsoleHandoffPage() {
         </Card>
 
         <Card>
+          <CardHeader><CardTitle>Safe Reference Links</CardTitle></CardHeader>
+          <CardContent className="text-sm space-y-2">
+            <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+              <li><a href="/privacy" className="text-blue-600 underline">/privacy</a></li>
+              <li><a href="/terms" className="text-blue-600 underline">/terms</a></li>
+              <li><a href="/data-safety" className="text-blue-600 underline">/data-safety</a></li>
+              <li><a href="/medisave" className="text-blue-600 underline">/medisave</a></li>
+            </ul>
+          </CardContent>
+        </Card>
+
+        <Card>
           <CardHeader><CardTitle>Store Listing Text</CardTitle></CardHeader>
           <CardContent className="space-y-4 text-sm">
             <div>
