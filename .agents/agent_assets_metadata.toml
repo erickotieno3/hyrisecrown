@@ -174,3 +174,27 @@ id = "gwOu4LoakdWGK--mNNEG0"
 uri = "file://client/public/images/android-automation-screenshot-8.png"
 type = "image"
 title = "Automation landscape screenshot 4"
+
+[[generated]]
+id = "wpd5IWb7Fii7_8L_AwK78"
+uri = "file://client/public/images/chromebook-screenshot-1.png"
+type = "image"
+title = "Chromebook dashboard screenshot"
+
+[[generated]]
+id = "aHyGDfE5I4ps5Tavlj4-8"
+uri = "file://client/public/images/chromebook-screenshot-2.png"
+type = "image"
+title = "Chromebook comparison screenshot"
+
+[[generated]]
+id = "U7YdDwevqCD4DPh8W9GYe"
+uri = "file://client/public/images/chromebook-screenshot-3.png"
+type = "image"
+title = "Chromebook AI screenshot"
+
+[[generated]]
+id = "9RE2DfjGp_CgSI9f655t9"
+uri = "file://client/public/images/chromebook-screenshot-4.png"
+type = "image"
+title = "Chromebook savings screenshot"
