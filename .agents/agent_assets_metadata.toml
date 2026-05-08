@@ -198,3 +198,27 @@ id = "9RE2DfjGp_CgSI9f655t9"
 uri = "file://client/public/images/chromebook-screenshot-4.png"
 type = "image"
 title = "Chromebook savings screenshot"
+
+[[generated]]
+id = "WHRgM06CvmVKKH9-gidms"
+uri = "file://client/public/images/android-xr-screenshot-1.png"
+type = "image"
+title = "XR landscape screenshot 1"
+
+[[generated]]
+id = "eRg4cBaCxFRMXlnB_Gbyv"
+uri = "file://client/public/images/android-xr-screenshot-2.png"
+type = "image"
+title = "XR landscape screenshot 2"
+
+[[generated]]
+id = "WqnWRqoxZgl5jmkzrmOGQ"
+uri = "file://client/public/images/android-xr-screenshot-3.png"
+type = "image"
+title = "XR portrait screenshot 1"
+
+[[generated]]
+id = "jn79sXeZK6PEdu-ay19AN"
+uri = "file://client/public/images/android-xr-screenshot-4.png"
+type = "image"
+title = "XR portrait screenshot 2"
