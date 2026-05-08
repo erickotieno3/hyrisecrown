@@ -1,0 +1,8 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "r9sGi68bWjcdvxDt-RWp4"
+uri = "file://client/public/images/app-icon.png"
+type = "image"
+title = "Hyrise Crown app icon"
