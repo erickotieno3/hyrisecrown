@@ -102,3 +102,9 @@ id = "vy1QQ-HwbA-fAQhRC_ka8"
 uri = "file://client/public/images/tv-screenshot-8.png"
 type = "image"
 title = "TV settings screenshot"
+
+[[generated]]
+id = "QXKlR9-k0MQZr8SNiAygN"
+uri = "file://client/public/images/tv-banner.png"
+type = "image"
+title = "Android TV banner"
