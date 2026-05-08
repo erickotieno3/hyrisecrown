@@ -54,7 +54,7 @@ export default function PlayConsoleHandoffPage() {
             </div>
             <div>
               <p className="font-medium mb-1">Short description</p>
-              <p className="text-muted-foreground">Compare grocery and household prices across stores, find the best deals fast, and browse trusted product links with AI search, voice search, and clear affiliate disclosures.</p>
+              <p className="text-muted-foreground">Compare grocery and household prices across stores, find the best deals fast, and browse trusted product links with AI search and voice search.</p>
             </div>
             <div>
               <p className="font-medium mb-1">Full description add-on</p>
