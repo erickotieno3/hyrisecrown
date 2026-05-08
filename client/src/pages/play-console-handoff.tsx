@@ -49,8 +49,12 @@ export default function PlayConsoleHandoffPage() {
           <CardHeader><CardTitle>Store Listing Text</CardTitle></CardHeader>
           <CardContent className="space-y-4 text-sm">
             <div>
+              <p className="font-medium mb-1">App name</p>
+              <p className="text-muted-foreground">Hyrise Crown Price Comparison</p>
+            </div>
+            <div>
               <p className="font-medium mb-1">Short description</p>
-              <p className="text-muted-foreground">Compare supermarket prices globally and find the best deals fast.</p>
+              <p className="text-muted-foreground">Compare grocery and household prices across stores, find the best deals fast, and browse trusted product links with AI search, voice search, and clear affiliate disclosures.</p>
             </div>
             <div>
               <p className="font-medium mb-1">Full description add-on</p>
