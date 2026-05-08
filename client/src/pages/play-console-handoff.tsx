@@ -105,6 +105,27 @@ Features voice search, AI product scanner, and real-time price tracking.
           </CardContent>
         </Card>
 
+        <Card>
+          <CardHeader><CardTitle>Video URLs to add in Play Console</CardTitle></CardHeader>
+          <CardContent className="text-sm space-y-3">
+            <div>
+              <p className="font-medium mb-1">Spatial XR video</p>
+              <p className="text-muted-foreground">Add a public or unlisted YouTube video with ads off and no age restriction. This should be 360°, 180°, or 3D if you use the spatial XR slot.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Non-spatial XR video</p>
+              <p className="text-muted-foreground">Add a public or unlisted YouTube video with ads off and no age restriction for the non-spatial XR slot.</p>
+            </div>
+            <div>
+              <p className="font-medium mb-1">Standard app video</p>
+              <p className="text-muted-foreground">Add a public or unlisted YouTube video with ads off and no age restriction for the regular app preview slot.</p>
+            </div>
+            <p className="text-xs text-muted-foreground">
+              Keep the videos safe, clean, and directly relevant to the app so they can be reused in GitHub notes later.
+            </p>
+          </CardContent>
+        </Card>
+
         <Button asChild>
           <a href="https://play.google.com/console" target="_blank" rel="noopener noreferrer">
             Open Play Console <ExternalLink className="h-4 w-4 ml-2" />
