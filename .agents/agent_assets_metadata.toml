@@ -54,3 +54,51 @@ id = "bZdA15EmTSdt9VHKf6AZE"
 uri = "file://client/public/images/tablet10-screenshot-2.png"
 type = "image"
 title = "10-inch comparison screenshot"
+
+[[generated]]
+id = "5RbHYtOsEg1kXGZFdrEeJ"
+uri = "file://client/public/images/tv-screenshot-1.png"
+type = "image"
+title = "TV home screenshot"
+
+[[generated]]
+id = "G3sSOJHArL0cnSgNjbLA6"
+uri = "file://client/public/images/tv-screenshot-2.png"
+type = "image"
+title = "TV comparison screenshot"
+
+[[generated]]
+id = "_lULtqMya8JeBVI9_EIty"
+uri = "file://client/public/images/tv-screenshot-3.png"
+type = "image"
+title = "TV AI search screenshot"
+
+[[generated]]
+id = "kKZlqXj0PeNns6ZwwMs8w"
+uri = "file://client/public/images/tv-screenshot-4.png"
+type = "image"
+title = "TV category screenshot"
+
+[[generated]]
+id = "rYwBKgP9wPSXCnLvNih5f"
+uri = "file://client/public/images/tv-screenshot-5.png"
+type = "image"
+title = "TV savings screenshot"
+
+[[generated]]
+id = "xk1TntMaoJCFH_1HQMvqd"
+uri = "file://client/public/images/tv-screenshot-6.png"
+type = "image"
+title = "TV retailer screenshot"
+
+[[generated]]
+id = "0jauI85qLEic48TZdcPYL"
+uri = "file://client/public/images/tv-screenshot-7.png"
+type = "image"
+title = "TV Medisave screenshot"
+
+[[generated]]
+id = "vy1QQ-HwbA-fAQhRC_ka8"
+uri = "file://client/public/images/tv-screenshot-8.png"
+type = "image"
+title = "TV settings screenshot"
