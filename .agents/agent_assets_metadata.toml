@@ -12,3 +12,21 @@ id = "nm0SXppfP9680aMB6XfO_"
 uri = "file://client/public/images/feature-graphic.png"
 type = "image"
 title = "Hyrise Crown feature graphic"
+
+[[generated]]
+id = "rTbv97YneY99zDq4cOIcr"
+uri = "file://client/public/images/play-screenshot-1.png"
+type = "image"
+title = "Home dashboard screenshot"
+
+[[generated]]
+id = "SOsh2DdzBdIIbGAwE1G_D"
+uri = "file://client/public/images/play-screenshot-2.png"
+type = "image"
+title = "Price comparison screenshot"
+
+[[generated]]
+id = "69v82EIXMcXBBWsBwFk9b"
+uri = "file://client/public/images/play-screenshot-3.png"
+type = "image"
+title = "AI search screenshot"
