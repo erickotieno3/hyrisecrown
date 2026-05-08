@@ -6,3 +6,9 @@ id = "r9sGi68bWjcdvxDt-RWp4"
 uri = "file://client/public/images/app-icon.png"
 type = "image"
 title = "Hyrise Crown app icon"
+
+[[generated]]
+id = "nm0SXppfP9680aMB6XfO_"
+uri = "file://client/public/images/feature-graphic.png"
+type = "image"
+title = "Hyrise Crown feature graphic"
