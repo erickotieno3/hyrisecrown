@@ -30,3 +30,15 @@ id = "69v82EIXMcXBBWsBwFk9b"
 uri = "file://client/public/images/play-screenshot-3.png"
 type = "image"
 title = "AI search screenshot"
+
+[[generated]]
+id = "MWw_V68qjVQNWaPJapqmR"
+uri = "file://client/public/images/tablet-screenshot-1.png"
+type = "image"
+title = "Tablet dashboard screenshot"
+
+[[generated]]
+id = "jmKz-DYoKaLEpSyic7M3x"
+uri = "file://client/public/images/tablet-screenshot-2.png"
+type = "image"
+title = "Tablet comparison screenshot"
