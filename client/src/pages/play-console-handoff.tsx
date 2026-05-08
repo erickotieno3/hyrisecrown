@@ -59,13 +59,13 @@ export default function PlayConsoleHandoffPage() {
             <div>
               <p className="font-medium mb-1">Full description add-on</p>
               <p className="text-muted-foreground">
-                Hyrise Crown Price Comparison helps shoppers compare grocery and household prices across multiple stores and marketplaces in one place. Search faster with AI-powered product discovery, voice search, and live price tracking. Browse trusted retailer links with clear affiliate disclosures, so you always know when a link may earn us a commission at no extra cost to you.
+                Hyrise Crown Price Comparison helps shoppers compare grocery and household prices across multiple stores and marketplaces in one place. Use AI-powered product discovery, voice search, and live price tracking to find better deals faster. The app includes clear affiliate disclosures so you always know when a link may earn us a commission at no extra cost to you.
                 <br /><br />
-                Use the app to find better deals, save time, and make smarter buying decisions. We also support Medisave UK affiliate shopping for medical supplies, with visible disclosure before any affiliate content. Your privacy matters: we explain what data we collect, why we collect it, and how you can manage or delete it in our Privacy Policy.
+                Browse trusted retailer links, save time, and make smarter buying decisions with a simple shopping experience built for clarity and transparency. We also support Medisave UK affiliate shopping for medical supplies, with disclosure shown before any affiliate content.
                 <br /><br />
-                The app includes permissions only when needed. Camera access is used for visual product search, microphone access is used for voice search, and notifications are used for price alerts you request. We do not access these features in the background without your action.
+                Your privacy matters. We explain what data we collect, why we collect it, and how you can manage or delete it in our Privacy Policy. Camera access is used only for visual product search, microphone access is used only for voice search, and notifications are used only for price alerts you request.
                 <br /><br />
-                Hyrise Crown is designed for transparent shopping, clear comparisons, and helpful guidance across regions and stores. If you are looking for a simple way to compare products, discover deals, and understand affiliate content clearly, this app is built for you.
+                Hyrise Crown is designed for transparent shopping, clear comparisons, and helpful guidance across regions and stores.
               </p>
             </div>
             <div>
