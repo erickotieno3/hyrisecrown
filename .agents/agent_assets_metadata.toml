@@ -126,3 +126,51 @@ id = "dSWkqvcJd9HhwQXlDJArF"
 uri = "file://client/public/images/wearos-screenshot-3.png"
 type = "image"
 title = "Wear OS search screenshot"
+
+[[generated]]
+id = "rrNzeReyR0OYEjolIi4LD"
+uri = "file://client/public/images/android-automation-screenshot-1.png"
+type = "image"
+title = "Automation portrait screenshot 1"
+
+[[generated]]
+id = "Cyqo56Yxjh203z0_t1aD1"
+uri = "file://client/public/images/android-automation-screenshot-2.png"
+type = "image"
+title = "Automation portrait screenshot 2"
+
+[[generated]]
+id = "OtF_ocj7l65INGOBXbpdB"
+uri = "file://client/public/images/android-automation-screenshot-3.png"
+type = "image"
+title = "Automation portrait screenshot 3"
+
+[[generated]]
+id = "1JPyDJBjJZrCWmV712KXn"
+uri = "file://client/public/images/android-automation-screenshot-4.png"
+type = "image"
+title = "Automation portrait screenshot 4"
+
+[[generated]]
+id = "AoovCWq5ksNrvBivYE_xB"
+uri = "file://client/public/images/android-automation-screenshot-5.png"
+type = "image"
+title = "Automation landscape screenshot 1"
+
+[[generated]]
+id = "QdEJlsKoUsIs0XwC-6yK6"
+uri = "file://client/public/images/android-automation-screenshot-6.png"
+type = "image"
+title = "Automation landscape screenshot 2"
+
+[[generated]]
+id = "dw3c_bMhh9OHu1XXT4WOL"
+uri = "file://client/public/images/android-automation-screenshot-7.png"
+type = "image"
+title = "Automation landscape screenshot 3"
+
+[[generated]]
+id = "gwOu4LoakdWGK--mNNEG0"
+uri = "file://client/public/images/android-automation-screenshot-8.png"
+type = "image"
+title = "Automation landscape screenshot 4"
