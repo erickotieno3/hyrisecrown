@@ -108,3 +108,21 @@ id = "QXKlR9-k0MQZr8SNiAygN"
 uri = "file://client/public/images/tv-banner.png"
 type = "image"
 title = "Android TV banner"
+
+[[generated]]
+id = "F2dTx5FnyTWELqC80REck"
+uri = "file://client/public/images/wearos-screenshot-1.png"
+type = "image"
+title = "Wear OS comparison screenshot"
+
+[[generated]]
+id = "U7M8isE4F3WeVgoADjne_"
+uri = "file://client/public/images/wearos-screenshot-2.png"
+type = "image"
+title = "Wear OS alert screenshot"
+
+[[generated]]
+id = "dSWkqvcJd9HhwQXlDJArF"
+uri = "file://client/public/images/wearos-screenshot-3.png"
+type = "image"
+title = "Wear OS search screenshot"
