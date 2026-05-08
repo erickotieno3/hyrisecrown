@@ -42,3 +42,15 @@ id = "jmKz-DYoKaLEpSyic7M3x"
 uri = "file://client/public/images/tablet-screenshot-2.png"
 type = "image"
 title = "Tablet comparison screenshot"
+
+[[generated]]
+id = "dXGX_l_0ZuO4i8V7g8hMd"
+uri = "file://client/public/images/tablet10-screenshot-1.png"
+type = "image"
+title = "10-inch dashboard screenshot"
+
+[[generated]]
+id = "bZdA15EmTSdt9VHKf6AZE"
+uri = "file://client/public/images/tablet10-screenshot-2.png"
+type = "image"
+title = "10-inch comparison screenshot"
