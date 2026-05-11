@@ -72,7 +72,7 @@ export default function TermsOfServicePage() {
           <CardContent className="text-sm text-muted-foreground space-y-2">
             <p>This app contains:</p>
             <ul className="list-disc list-inside space-y-1">
-              <li><strong>Affiliate links:</strong> When you click retailer links and make purchases, we may earn a commission at no extra cost to you</li>
+              <li><strong>Affiliate links:</strong> When you click retailer links and make purchases, we may earn a commission</li>
               <li><strong>Google AdSense ads:</strong> Contextual and personalised advertisements. You can opt out of personalised ads in your Google account settings</li>
               <li><strong>Medisave UK affiliate links:</strong> See Section 5a below for full disclosure</li>
             </ul>
@@ -93,16 +93,15 @@ export default function TermsOfServicePage() {
               We earn a <strong>5% commission</strong> when purchases are made through these links.
             </p>
             <ul className="list-disc list-inside space-y-1">
-              <li>Product recommendations are based on clinical relevance and are <strong>not influenced by commission arrangements</strong></li>
+              <li>Product recommendations are based on clinical relevance and are not influenced by commission arrangements</li>
               <li>Prices on Medisave are the same whether you use our links or not</li>
               <li>A <strong>90-day referral cookie</strong> is placed when you click our Medisave affiliate links</li>
-              <li>We are <strong>not responsible</strong> for the quality, safety, or delivery of products purchased from Medisave UK</li>
+              <li>We are not responsible for the quality, safety, or delivery of products purchased from Medisave UK</li>
               <li>All returns and disputes are handled directly by Medisave UK under UK consumer law</li>
               <li>This partnership is managed through the <strong>Shopify Collabs</strong> affiliate programme</li>
             </ul>
             <p className="text-xs border-t pt-2">
-              <strong>Legal basis:</strong> Disclosure required by UK ASA CAP Code Rule 2.1 (Advertisements must be obviously identifiable)
-              and FTC 16 CFR Part 255 (Guides Concerning Use of Endorsements and Testimonials).
+              <strong>Legal basis:</strong> Disclosure required by UK ASA CAP Code Rule 2.1 and FTC 16 CFR Part 255.
             </p>
           </CardContent>
         </Card>

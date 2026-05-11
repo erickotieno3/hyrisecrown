@@ -28,7 +28,7 @@ export default function PlayConsoleHandoffPage() {
               <li>Terms of Service</li>
               <li>Data Safety page</li>
               <li>Permission rationale dialogs</li>
-              <li>Medisave affiliate store page</li>
+              <li>Affiliate disclosures and store page</li>
             </ul>
           </CardContent>
         </Card>
@@ -59,7 +59,7 @@ export default function PlayConsoleHandoffPage() {
             <div>
               <p className="font-medium mb-1">Full description add-on</p>
               <p className="text-muted-foreground">
-                Hyrise Crown Price Comparison helps shoppers compare grocery and household prices across multiple stores and marketplaces in one place. Use AI-powered product discovery, voice search, and live updates to find product information faster. The app includes affiliate disclosures so you always know when a link may earn us a commission.
+                Hyrise Crown Price Comparison helps shoppers compare grocery and household prices across multiple stores and marketplaces in one place. Use AI-powered product discovery, voice search, and live updates to find product information faster. The app includes affiliate disclosures so you know when a link may earn us a commission.
                 <br /><br />
                 Browse retailer links, save time, and make informed buying decisions with a simple shopping experience built for clarity and transparency. We also support Medisave UK affiliate shopping for medical supplies, with disclosure shown before any affiliate content.
                 <br /><br />
@@ -84,7 +84,7 @@ export default function PlayConsoleHandoffPage() {
         <Card>
           <CardHeader><CardTitle>Release Notes</CardTitle></CardHeader>
           <CardContent className="space-y-3 text-sm">
-            <p className="text-muted-foreground">Initial release of the global price comparison app with AI search, voice search, and Medisave UK affiliate integration.</p>
+            <p className="text-muted-foreground">Initial release of the global price comparison app with AI search, voice search, and affiliate shopping support.</p>
             <pre className="bg-gray-50 rounded p-3 text-xs overflow-x-auto">
 Compare grocery prices across Tesco, Walmart, Carrefour and more.
 Features voice search, AI product scanner, and real-time price tracking.

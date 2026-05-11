@@ -90,6 +90,6 @@ export default function AppDownload() {
 // Add type definition for the global window object
 declare global {
   interface Window {
-    gtag?: (command: string, action: string, params?: any) => void;
+    gtag?: (...args: any[]) => void;
   }
 }

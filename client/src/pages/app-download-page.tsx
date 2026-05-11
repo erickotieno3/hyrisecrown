@@ -4,19 +4,11 @@ import { Button } from '@/components/ui/button';
 import analytics from '@/lib/analytics';
 import { AffiliateBanner } from '@/components/common/AffiliateLink';
 
-/**
- * App Download Page
- * 
- * This page provides users with links to download the mobile app
- * from Google Play Store and Apple App Store with proper legal information.
- */
 export default function AppDownloadPage() {
   useEffect(() => {
-    // Track page view in analytics
     analytics.trackPageView('/app-download', 'Download the Tesco Price Comparison App');
   }, []);
 
-  // Track app download clicks
   const handleDownloadClick = (platform: 'android' | 'ios') => {
     analytics.trackAppDownload(platform);
   };
@@ -30,16 +22,15 @@ export default function AppDownloadPage() {
           <div>
             <h2 className="text-2xl font-semibold mb-4">Tesco Price Comparison</h2>
             <p className="mb-4 text-gray-700">
-              Get real-time price comparisons from supermarkets across the globe, 
-              right in your pocket! Our mobile app offers:
+              Compare prices across multiple retailers with a simple mobile app. Our app offers:
             </p>
             
             <ul className="list-disc pl-5 mb-6 text-gray-700 space-y-2">
-              <li>Instant price comparisons from your favorite stores</li>
+              <li>Price comparisons from multiple stores</li>
               <li>Barcode scanning for quick product lookup</li>
-              <li>Personalized price alerts for your favorite products</li>
+              <li>Price alerts for products you follow</li>
               <li>Offline shopping lists that sync across devices</li>
-              <li>Multi-language support with 5+ languages</li>
+              <li>Multi-language support</li>
               <li>Location-based store recommendations</li>
             </ul>
             
@@ -87,7 +78,6 @@ export default function AppDownloadPage() {
         </div>
       </div>
       
-      {/* Legal Section */}
       <div className="max-w-3xl mx-auto mt-8">
         <AffiliateBanner />
         
@@ -111,15 +101,14 @@ export default function AppDownloadPage() {
           <div className="text-sm text-gray-700 space-y-2">
             <p>
               Our free application is supported by advertising and affiliate commissions. When you click on 
-              retailer links and make purchases, we may receive a commission at no additional cost to you.
+              retailer links and make purchases, we may receive a commission.
             </p>
             <p>
               We use targeted advertising services including Google AdMob. You can opt out of personalized 
               advertising by adjusting your device settings or through our application settings menu.
             </p>
             <p>
-              We're committed to providing accurate price information, but prices and availability may change 
-              rapidly. Always verify final prices on the retailer's website before making a purchase.
+              Prices and availability may change rapidly. Always verify final prices on the retailer's website before making a purchase.
             </p>
           </div>
         </div>
