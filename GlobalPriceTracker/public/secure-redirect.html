@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Redirect - Tesco Price Comparison</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+      text-align: center;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #00539f;
+      margin-bottom: 20px;
+    }
+    .warning-icon {
+      font-size: 48px;
+      color: #FFA000;
+      margin-bottom: 20px;
+    }
+    .instruction {
+      margin: 20px 0;
+      padding: 15px;
+      background-color: #e8f4ff;
+      border-radius: 4px;
+      text-align: left;
+    }
+    .button {
+      display: inline-block;
+      background: #00539f;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      margin-top: 20px;
+      border: none;
+      cursor: pointer;
+    }
+    .credentials {
+      margin-top: 30px;
+      padding: 15px;
+      background-color: #f9f9f9;
+      border: 1px solid #eee;
+      border-radius: 4px;
+      text-align: left;
+    }
+    .credentials p {
+      margin: 5px 0;
+    }
+    .highlight {
+      font-weight: bold;
+      color: #00539f;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="warning-icon">⚠️</div>
+    <h1>Security Certificate Notice</h1>
+    <p>You're seeing a security warning because this is a development environment with a self-signed certificate.</p>
+    
+    <div class="instruction">
+      <h3>How to proceed:</h3>
+      <ol>
+        <li>Click "Advanced..." on the warning page</li>
+        <li>Click "Accept the Risk and Continue"</li>
+        <li>You'll only need to do this once</li>
+      </ol>
+    </div>
+    
+    <p>This is a development environment and completely safe to use.</p>
+    
+    <div class="credentials">
+      <h3>Administrator Access:</h3>
+      <p><span class="highlight">Username:</span> admin@tesco-compare.com</p>
+      <p><span class="highlight">Password:</span> Tesco-Admin-2023!</p>
+      <p><small>Note: These are development credentials only and will be replaced in production.</small></p>
+    </div>
+    
+    <a href="/mobile-app.html" class="button" id="continueButton">Continue to Application</a>
+  </div>
+
+  <script>
+    document.getElementById('continueButton').addEventListener('click', function(e) {
+      localStorage.setItem('securityBypassAccepted', 'true');
+    });
+  </script>
+</body>
+</html>

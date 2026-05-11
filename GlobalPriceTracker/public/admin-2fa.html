@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Verification - Tesco Price Comparison</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 400px;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .logo img {
+      max-width: 180px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #00539f;
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+      letter-spacing: 5px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .code-input {
+      display: flex;
+      justify-content: space-between;
+    }
+    .code-digit {
+      width: 40px;
+      height: 50px;
+      font-size: 24px;
+      text-align: center;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin: 0 5px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #00539f;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #003d7a;
+    }
+    .message {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+    .error {
+      color: #d9534f;
+    }
+    .info {
+      color: #5bc0de;
+    }
+    .success {
+      color: #5cb85c;
+    }
+    .resend {
+      text-align: center;
+      margin-top: 15px;
+    }
+    .resend a {
+      color: #00539f;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .resend a:hover {
+      text-decoration: underline;
+    }
+    .timer {
+      text-align: center;
+      margin-top: 15px;
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="/assets/tesco-logo.svg" alt="Tesco Price Comparison">
+    </div>
+    <h1>Two-Factor Authentication</h1>
+    <div class="message info">
+      A verification code has been sent to your email address. Please enter it below to continue.
+    </div>
+    
+    <form id="verificationForm">
+      <div class="form-group">
+        <label for="verificationCode">Verification Code</label>
+        <input type="text" id="verificationCode" maxlength="6" placeholder="Enter 6-digit code" required>
+      </div>
+      
+      <button type="submit" id="verifyButton">Verify &amp; Continue</button>
+      
+      <div class="timer" id="timer">
+        Code expires in <span id="countdown">10:00</span>
+      </div>
+      
+      <div class="resend">
+        <a href="#" id="resendLink">Didn't receive the code? Resend</a>
+      </div>
+      
+      <div class="message error" id="errorMessage" style="display: none;"></div>
+      <div class="message success" id="successMessage" style="display: none;"></div>
+    </form>
+  </div>
+
+  <script>
+    // Parse email from URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const email = urlParams.get('email');
+    
+    if (!email) {
+      window.location.href = '/admin-login.html';
+    }
+    
+    // Set up countdown timer
+    let timeLeft = 600; // 10 minutes in seconds
+    const countdownEl = document.getElementById('countdown');
+    
+    function updateCountdown() {
+      const minutes = Math.floor(timeLeft / 60);
+      let seconds = timeLeft % 60;
+      seconds = seconds < 10 ? '0' + seconds : seconds;
+      countdownEl.textContent = `${minutes}:${seconds}`;
+      
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+        countdownEl.textContent = '0:00';
+        document.getElementById('errorMessage').textContent = 'Verification code has expired. Please request a new one.';
+        document.getElementById('errorMessage').style.display = 'block';
+        document.getElementById('verifyButton').disabled = true;
+      }
+      
+      timeLeft--;
+    }
+    
+    const timer = setInterval(updateCountdown, 1000);
+    updateCountdown();
+    
+    // Handle form submission
+    document.getElementById('verificationForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const verificationCode = document.getElementById('verificationCode').value.trim();
+      const errorMessage = document.getElementById('errorMessage');
+      const successMessage = document.getElementById('successMessage');
+      const verifyButton = document.getElementById('verifyButton');
+      
+      errorMessage.style.display = 'none';
+      successMessage.style.display = 'none';
+      
+      if (verificationCode.length !== 6 || !/^\d+$/.test(verificationCode)) {
+        errorMessage.textContent = 'Please enter a valid 6-digit code.';
+        errorMessage.style.display = 'block';
+        return;
+      }
+      
+      verifyButton.disabled = true;
+      verifyButton.textContent = 'Verifying...';
+      
+      try {
+        const response = await fetch('/api/admin/verify-2fa', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            email,
+            code: verificationCode
+          })
+        });
+        
+        const data = await response.json();
+        
+        if (response.ok) {
+          successMessage.textContent = 'Verification successful! Redirecting...';
+          successMessage.style.display = 'block';
+          
+          // Store authentication in session storage
+          sessionStorage.setItem('adminAuthenticated', 'true');
+          sessionStorage.setItem('adminEmail', email);
+          
+          // Redirect to admin dashboard after a brief delay
+          setTimeout(() => {
+            window.location.href = '/admin-dashboard.html';
+          }, 1500);
+        } else {
+          errorMessage.textContent = data.message || 'Invalid verification code. Please try again.';
+          errorMessage.style.display = 'block';
+          verifyButton.disabled = false;
+          verifyButton.textContent = 'Verify & Continue';
+        }
+      } catch (error) {
+        errorMessage.textContent = 'An error occurred. Please try again.';
+        errorMessage.style.display = 'block';
+        verifyButton.disabled = false;
+        verifyButton.textContent = 'Verify & Continue';
+      }
+    });
+    
+    // Handle resend link
+    document.getElementById('resendLink').addEventListener('click', async (e) => {
+      e.preventDefault();
+      
+      const resendLink = document.getElementById('resendLink');
+      const errorMessage = document.getElementById('errorMessage');
+      const successMessage = document.getElementById('successMessage');
+      
+      errorMessage.style.display = 'none';
+      successMessage.style.display = 'none';
+      
+      resendLink.textContent = 'Sending...';
+      
+      try {
+        const response = await fetch('/api/admin/send-verification', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email })
+        });
+        
+        const data = await response.json();
+        
+        if (response.ok) {
+          successMessage.textContent = 'A new verification code has been sent to your email.';
+          successMessage.style.display = 'block';
+          
+          // Reset the countdown timer
+          clearInterval(timer);
+          timeLeft = 600;
+          const newTimer = setInterval(updateCountdown, 1000);
+          updateCountdown();
+          
+          document.getElementById('verifyButton').disabled = false;
+        } else {
+          errorMessage.textContent = data.message || 'Failed to send verification code. Please try again.';
+          errorMessage.style.display = 'block';
+        }
+      } catch (error) {
+        errorMessage.textContent = 'An error occurred. Please try again.';
+        errorMessage.style.display = 'block';
+      }
+      
+      resendLink.textContent = 'Didn\'t receive the code? Resend';
+    });
+  </script>
+</body>
+</html>

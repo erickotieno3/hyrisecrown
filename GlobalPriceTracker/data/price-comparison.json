@@ -1,0 +1,756 @@
+{
+  "whole_milk_1l": {
+    "productName": "Whole Milk 1L",
+    "category": "Dairy",
+    "stores": [
+      {
+        "store": "Tesco",
+        "price": 1.5,
+        "stock": 21,
+        "barcode": "5000290000300",
+        "lastUpdated": "2026-03-17T21:11:27.202Z"
+      }
+    ],
+    "cheapest": {
+      "store": "Tesco",
+      "price": 1.5,
+      "stock": 21,
+      "barcode": "5000290000300",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "mostExpensive": {
+      "store": "Tesco",
+      "price": 1.5,
+      "stock": 21,
+      "barcode": "5000290000300",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "savingsPotential": "0.00"
+  },
+  "sliced_bread_800g": {
+    "productName": "Sliced Bread 800g",
+    "category": "Bakery",
+    "stores": [
+      {
+        "store": "Tesco",
+        "price": 0.95,
+        "stock": 37,
+        "barcode": "5000290000400",
+        "lastUpdated": "2026-03-17T21:11:27.202Z"
+      }
+    ],
+    "cheapest": {
+      "store": "Tesco",
+      "price": 0.95,
+      "stock": 37,
+      "barcode": "5000290000400",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "mostExpensive": {
+      "store": "Tesco",
+      "price": 0.95,
+      "stock": 37,
+      "barcode": "5000290000400",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "savingsPotential": "0.00"
+  },
+  "cheddar_cheese_200g": {
+    "productName": "Cheddar Cheese 200g",
+    "category": "Dairy",
+    "stores": [
+      {
+        "store": "Tesco",
+        "price": 2.5,
+        "stock": 41,
+        "barcode": "5000290000500",
+        "lastUpdated": "2026-03-17T21:11:27.202Z"
+      }
+    ],
+    "cheapest": {
+      "store": "Tesco",
+      "price": 2.5,
+      "stock": 41,
+      "barcode": "5000290000500",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "mostExpensive": {
+      "store": "Tesco",
+      "price": 2.5,
+      "stock": 41,
+      "barcode": "5000290000500",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "savingsPotential": "0.00"
+  },
+  "free_range_eggs_(6)": {
+    "productName": "Free Range Eggs (6)",
+    "category": "Dairy",
+    "stores": [
+      {
+        "store": "Tesco",
+        "price": 2,
+        "stock": 92,
+        "barcode": "5000290000600",
+        "lastUpdated": "2026-03-17T21:11:27.202Z"
+      }
+    ],
+    "cheapest": {
+      "store": "Tesco",
+      "price": 2,
+      "stock": 92,
+      "barcode": "5000290000600",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "mostExpensive": {
+      "store": "Tesco",
+      "price": 2,
+      "stock": 92,
+      "barcode": "5000290000600",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "savingsPotential": "0.00"
+  },
+  "tomato_ketchup_500ml": {
+    "productName": "Tomato Ketchup 500ml",
+    "category": "Condiments",
+    "stores": [
+      {
+        "store": "Tesco",
+        "price": 1.2,
+        "stock": 15,
+        "barcode": "5000290000700",
+        "lastUpdated": "2026-03-17T21:11:27.202Z"
+      }
+    ],
+    "cheapest": {
+      "store": "Tesco",
+      "price": 1.2,
+      "stock": 15,
+      "barcode": "5000290000700",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "mostExpensive": {
+      "store": "Tesco",
+      "price": 1.2,
+      "stock": 15,
+      "barcode": "5000290000700",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "savingsPotential": "0.00"
+  },
+  "semi_skimmed_milk_1l": {
+    "productName": "Semi Skimmed Milk 1L",
+    "category": "Dairy",
+    "stores": [
+      {
+        "store": "Sainsbury's",
+        "price": 1.65,
+        "stock": 19,
+        "barcode": "5000290010300",
+        "lastUpdated": "2026-03-17T21:11:27.202Z"
+      }
+    ],
+    "cheapest": {
+      "store": "Sainsbury's",
+      "price": 1.65,
+      "stock": 19,
+      "barcode": "5000290010300",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "mostExpensive": {
+      "store": "Sainsbury's",
+      "price": 1.65,
+      "stock": 19,
+      "barcode": "5000290010300",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "savingsPotential": "0.00"
+  },
+  "wholemeal_bread_800g": {
+    "productName": "Wholemeal Bread 800g",
+    "category": "Bakery",
+    "stores": [
+      {
+        "store": "Sainsbury's",
+        "price": 1.1,
+        "stock": 16,
+        "barcode": "5000290010400",
+        "lastUpdated": "2026-03-17T21:11:27.202Z"
+      }
+    ],
+    "cheapest": {
+      "store": "Sainsbury's",
+      "price": 1.1,
+      "stock": 16,
+      "barcode": "5000290010400",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "mostExpensive": {
+      "store": "Sainsbury's",
+      "price": 1.1,
+      "stock": 16,
+      "barcode": "5000290010400",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "savingsPotential": "0.00"
+  },
+  "red_leicester_cheese_200g": {
+    "productName": "Red Leicester Cheese 200g",
+    "category": "Dairy",
+    "stores": [
+      {
+        "store": "Sainsbury's",
+        "price": 2.75,
+        "stock": 84,
+        "barcode": "5000290010500",
+        "lastUpdated": "2026-03-17T21:11:27.202Z"
+      }
+    ],
+    "cheapest": {
+      "store": "Sainsbury's",
+      "price": 2.75,
+      "stock": 84,
+      "barcode": "5000290010500",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "mostExpensive": {
+      "store": "Sainsbury's",
+      "price": 2.75,
+      "stock": 84,
+      "barcode": "5000290010500",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "savingsPotential": "0.00"
+  },
+  "organic_free_range_eggs_(6)": {
+    "productName": "Organic Free Range Eggs (6)",
+    "category": "Dairy",
+    "stores": [
+      {
+        "store": "Sainsbury's",
+        "price": 2.5,
+        "stock": 88,
+        "barcode": "5000290010600",
+        "lastUpdated": "2026-03-17T21:11:27.202Z"
+      }
+    ],
+    "cheapest": {
+      "store": "Sainsbury's",
+      "price": 2.5,
+      "stock": 88,
+      "barcode": "5000290010600",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "mostExpensive": {
+      "store": "Sainsbury's",
+      "price": 2.5,
+      "stock": 88,
+      "barcode": "5000290010600",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "savingsPotential": "0.00"
+  },
+  "heinz_tomato_sauce_500ml": {
+    "productName": "Heinz Tomato Sauce 500ml",
+    "category": "Condiments",
+    "stores": [
+      {
+        "store": "Sainsbury's",
+        "price": 1.3,
+        "stock": 54,
+        "barcode": "5000290010700",
+        "lastUpdated": "2026-03-17T21:11:27.202Z"
+      }
+    ],
+    "cheapest": {
+      "store": "Sainsbury's",
+      "price": 1.3,
+      "stock": 54,
+      "barcode": "5000290010700",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "mostExpensive": {
+      "store": "Sainsbury's",
+      "price": 1.3,
+      "stock": 54,
+      "barcode": "5000290010700",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "savingsPotential": "0.00"
+  },
+  "asda_milk_1l": {
+    "productName": "Asda Milk 1L",
+    "category": "Dairy",
+    "stores": [
+      {
+        "store": "Asda",
+        "price": 1.4,
+        "stock": 38,
+        "barcode": "5010306001234",
+        "lastUpdated": "2026-03-17T21:11:27.202Z"
+      }
+    ],
+    "cheapest": {
+      "store": "Asda",
+      "price": 1.4,
+      "stock": 38,
+      "barcode": "5010306001234",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "mostExpensive": {
+      "store": "Asda",
+      "price": 1.4,
+      "stock": 38,
+      "barcode": "5010306001234",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "savingsPotential": "0.00"
+  },
+  "asda_white_bread_800g": {
+    "productName": "Asda White Bread 800g",
+    "category": "Bakery",
+    "stores": [
+      {
+        "store": "Asda",
+        "price": 0.85,
+        "stock": 125,
+        "barcode": "5010306001235",
+        "lastUpdated": "2026-03-17T21:11:27.202Z"
+      }
+    ],
+    "cheapest": {
+      "store": "Asda",
+      "price": 0.85,
+      "stock": 125,
+      "barcode": "5010306001235",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "mostExpensive": {
+      "store": "Asda",
+      "price": 0.85,
+      "stock": 125,
+      "barcode": "5010306001235",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "savingsPotential": "0.00"
+  },
+  "cheddar_cheese_250g": {
+    "productName": "Cheddar Cheese 250g",
+    "category": "Dairy",
+    "stores": [
+      {
+        "store": "Asda",
+        "price": 2.3,
+        "stock": 79,
+        "barcode": "5010306001236",
+        "lastUpdated": "2026-03-17T21:11:27.202Z"
+      }
+    ],
+    "cheapest": {
+      "store": "Asda",
+      "price": 2.3,
+      "stock": 79,
+      "barcode": "5010306001236",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "mostExpensive": {
+      "store": "Asda",
+      "price": 2.3,
+      "stock": 79,
+      "barcode": "5010306001236",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "savingsPotential": "0.00"
+  },
+  "large_eggs_(10)": {
+    "productName": "Large Eggs (10)",
+    "category": "Dairy",
+    "stores": [
+      {
+        "store": "Asda",
+        "price": 2.75,
+        "stock": 98,
+        "barcode": "5010306001237",
+        "lastUpdated": "2026-03-17T21:11:27.202Z"
+      }
+    ],
+    "cheapest": {
+      "store": "Asda",
+      "price": 2.75,
+      "stock": 98,
+      "barcode": "5010306001237",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "mostExpensive": {
+      "store": "Asda",
+      "price": 2.75,
+      "stock": 98,
+      "barcode": "5010306001237",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "savingsPotential": "0.00"
+  },
+  "asda_pasta_500g": {
+    "productName": "Asda Pasta 500g",
+    "category": "Pantry",
+    "stores": [
+      {
+        "store": "Asda",
+        "price": 0.65,
+        "stock": 39,
+        "barcode": "5010306001238",
+        "lastUpdated": "2026-03-17T21:11:27.202Z"
+      }
+    ],
+    "cheapest": {
+      "store": "Asda",
+      "price": 0.65,
+      "stock": 39,
+      "barcode": "5010306001238",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "mostExpensive": {
+      "store": "Asda",
+      "price": 0.65,
+      "stock": 39,
+      "barcode": "5010306001238",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "savingsPotential": "0.00"
+  },
+  "great_value_2%_milk_1_gal": {
+    "productName": "Great Value 2% Milk 1 Gal",
+    "category": "Dairy",
+    "stores": [
+      {
+        "store": "Walmart",
+        "price": 3.48,
+        "stock": 130,
+        "barcode": "00078124085106",
+        "lastUpdated": "2026-03-17T21:11:27.202Z"
+      }
+    ],
+    "cheapest": {
+      "store": "Walmart",
+      "price": 3.48,
+      "stock": 130,
+      "barcode": "00078124085106",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "mostExpensive": {
+      "store": "Walmart",
+      "price": 3.48,
+      "stock": 130,
+      "barcode": "00078124085106",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "savingsPotential": "0.00"
+  },
+  "great_value_whole_wheat_bread": {
+    "productName": "Great Value Whole Wheat Bread",
+    "category": "Bakery",
+    "stores": [
+      {
+        "store": "Walmart",
+        "price": 1.98,
+        "stock": 37,
+        "barcode": "00078124085207",
+        "lastUpdated": "2026-03-17T21:11:27.202Z"
+      }
+    ],
+    "cheapest": {
+      "store": "Walmart",
+      "price": 1.98,
+      "stock": 37,
+      "barcode": "00078124085207",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "mostExpensive": {
+      "store": "Walmart",
+      "price": 1.98,
+      "stock": 37,
+      "barcode": "00078124085207",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "savingsPotential": "0.00"
+  },
+  "great_value_cheddar_cheese_8oz": {
+    "productName": "Great Value Cheddar Cheese 8oz",
+    "category": "Dairy",
+    "stores": [
+      {
+        "store": "Walmart",
+        "price": 2.54,
+        "stock": 131,
+        "barcode": "00078124085308",
+        "lastUpdated": "2026-03-17T21:11:27.202Z"
+      }
+    ],
+    "cheapest": {
+      "store": "Walmart",
+      "price": 2.54,
+      "stock": 131,
+      "barcode": "00078124085308",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "mostExpensive": {
+      "store": "Walmart",
+      "price": 2.54,
+      "stock": 131,
+      "barcode": "00078124085308",
+      "lastUpdated": "2026-03-17T21:11:27.202Z"
+    },
+    "savingsPotential": "0.00"
+  },
+  "iphone_12_64gb": {
+    "productName": "iPhone 12 64GB",
+    "category": "Electronics",
+    "stores": [
+      {
+        "store": "eBay UK",
+        "price": 189.99,
+        "stock": 14,
+        "lastUpdated": "2026-03-17T21:11:27.203Z"
+      }
+    ],
+    "cheapest": {
+      "store": "eBay UK",
+      "price": 189.99,
+      "stock": 14,
+      "lastUpdated": "2026-03-17T21:11:27.203Z"
+    },
+    "mostExpensive": {
+      "store": "eBay UK",
+      "price": 189.99,
+      "stock": 14,
+      "lastUpdated": "2026-03-17T21:11:27.203Z"
+    },
+    "savingsPotential": "0.00"
+  },
+  "macbook_pro_13\"_m1": {
+    "productName": "MacBook Pro 13\" M1",
+    "category": "Electronics",
+    "stores": [
+      {
+        "store": "eBay UK",
+        "price": 849,
+        "stock": 6,
+        "lastUpdated": "2026-03-17T21:11:27.203Z"
+      }
+    ],
+    "cheapest": {
+      "store": "eBay UK",
+      "price": 849,
+      "stock": 6,
+      "lastUpdated": "2026-03-17T21:11:27.203Z"
+    },
+    "mostExpensive": {
+      "store": "eBay UK",
+      "price": 849,
+      "stock": 6,
+      "lastUpdated": "2026-03-17T21:11:27.203Z"
+    },
+    "savingsPotential": "0.00"
+  },
+  "usb-c_cable_2m": {
+    "productName": "USB-C Cable 2m",
+    "category": "Accessories",
+    "stores": [
+      {
+        "store": "eBay UK",
+        "price": 4.99,
+        "stock": 13,
+        "lastUpdated": "2026-03-17T21:11:27.203Z"
+      }
+    ],
+    "cheapest": {
+      "store": "eBay UK",
+      "price": 4.99,
+      "stock": 13,
+      "lastUpdated": "2026-03-17T21:11:27.203Z"
+    },
+    "mostExpensive": {
+      "store": "eBay UK",
+      "price": 4.99,
+      "stock": 13,
+      "lastUpdated": "2026-03-17T21:11:27.203Z"
+    },
+    "savingsPotential": "0.00"
+  },
+  "wireless_bluetooth_headphones": {
+    "productName": "Wireless Bluetooth Headphones",
+    "category": "Audio",
+    "stores": [
+      {
+        "store": "eBay UK",
+        "price": 24.99,
+        "stock": 2,
+        "lastUpdated": "2026-03-17T21:11:27.203Z"
+      }
+    ],
+    "cheapest": {
+      "store": "eBay UK",
+      "price": 24.99,
+      "stock": 2,
+      "lastUpdated": "2026-03-17T21:11:27.203Z"
+    },
+    "mostExpensive": {
+      "store": "eBay UK",
+      "price": 24.99,
+      "stock": 2,
+      "lastUpdated": "2026-03-17T21:11:27.203Z"
+    },
+    "savingsPotential": "0.00"
+  },
+  "4k_webcam": {
+    "productName": "4K Webcam",
+    "category": "Electronics",
+    "stores": [
+      {
+        "store": "eBay UK",
+        "price": 59.99,
+        "stock": 46,
+        "lastUpdated": "2026-03-17T21:11:27.203Z"
+      }
+    ],
+    "cheapest": {
+      "store": "eBay UK",
+      "price": 59.99,
+      "stock": 46,
+      "lastUpdated": "2026-03-17T21:11:27.203Z"
+    },
+    "mostExpensive": {
+      "store": "eBay UK",
+      "price": 59.99,
+      "stock": 46,
+      "lastUpdated": "2026-03-17T21:11:27.203Z"
+    },
+    "savingsPotential": "0.00"
+  },
+  "ps5_console": {
+    "productName": "PS5 Console",
+    "category": "Gaming",
+    "stores": [
+      {
+        "store": "eBay US",
+        "price": 499,
+        "stock": 11,
+        "lastUpdated": "2026-03-17T21:11:27.203Z"
+      }
+    ],
+    "cheapest": {
+      "store": "eBay US",
+      "price": 499,
+      "stock": 11,
+      "lastUpdated": "2026-03-17T21:11:27.203Z"
+    },
+    "mostExpensive": {
+      "store": "eBay US",
+      "price": 499,
+      "stock": 11,
+      "lastUpdated": "2026-03-17T21:11:27.203Z"
+    },
+    "savingsPotential": "0.00"
+  },
+  "xbox_series_x": {
+    "productName": "Xbox Series X",
+    "category": "Gaming",
+    "stores": [
+      {
+        "store": "eBay US",
+        "price": 499,
+        "stock": 16,
+        "lastUpdated": "2026-03-17T21:11:27.203Z"
+      }
+    ],
+    "cheapest": {
+      "store": "eBay US",
+      "price": 499,
+      "stock": 16,
+      "lastUpdated": "2026-03-17T21:11:27.203Z"
+    },
+    "mostExpensive": {
+      "store": "eBay US",
+      "price": 499,
+      "stock": 16,
+      "lastUpdated": "2026-03-17T21:11:27.203Z"
+    },
+    "savingsPotential": "0.00"
+  },
+  "ipad_air_5": {
+    "productName": "iPad Air 5",
+    "category": "Electronics",
+    "stores": [
+      {
+        "store": "eBay US",
+        "price": 549,
+        "stock": 7,
+        "lastUpdated": "2026-03-17T21:11:27.203Z"
+      }
+    ],
+    "cheapest": {
+      "store": "eBay US",
+      "price": 549,
+      "stock": 7,
+      "lastUpdated": "2026-03-17T21:11:27.203Z"
+    },
+    "mostExpensive": {
+      "store": "eBay US",
+      "price": 549,
+      "stock": 7,
+      "lastUpdated": "2026-03-17T21:11:27.203Z"
+    },
+    "savingsPotential": "0.00"
+  },
+  "nvidia_rtx_4070": {
+    "productName": "NVIDIA RTX 4070",
+    "category": "Computing",
+    "stores": [
+      {
+        "store": "eBay US",
+        "price": 599.99,
+        "stock": 52,
+        "lastUpdated": "2026-03-17T21:11:27.203Z"
+      }
+    ],
+    "cheapest": {
+      "store": "eBay US",
+      "price": 599.99,
+      "stock": 52,
+      "lastUpdated": "2026-03-17T21:11:27.203Z"
+    },
+    "mostExpensive": {
+      "store": "eBay US",
+      "price": 599.99,
+      "stock": 52,
+      "lastUpdated": "2026-03-17T21:11:27.203Z"
+    },
+    "savingsPotential": "0.00"
+  },
+  "sony_wh-1000xm5_headphones": {
+    "productName": "Sony WH-1000XM5 Headphones",
+    "category": "Audio",
+    "stores": [
+      {
+        "store": "eBay US",
+        "price": 349.99,
+        "stock": 25,
+        "lastUpdated": "2026-03-17T21:11:27.203Z"
+      }
+    ],
+    "cheapest": {
+      "store": "eBay US",
+      "price": 349.99,
+      "stock": 25,
+      "lastUpdated": "2026-03-17T21:11:27.203Z"
+    },
+    "mostExpensive": {
+      "store": "eBay US",
+      "price": 349.99,
+      "stock": 25,
+      "lastUpdated": "2026-03-17T21:11:27.203Z"
+    },
+    "savingsPotential": "0.00"
+  }
+}

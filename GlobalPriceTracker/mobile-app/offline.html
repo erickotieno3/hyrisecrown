@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0078D7">
+  <title>Offline - Tesco Price Comparison</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="assets/icon-192x192.png">
+  <link rel="apple-touch-icon" href="assets/icon-192x192.png">
+  
+  <style>
+    :root {
+      --tesco-blue: #0078D7;
+      --tesco-dark-blue: #00539f;
+      --light-gray: #f5f5f5;
+      --medium-gray: #d0d0d0;
+      --dark-gray: #333333;
+      --text-primary: #222222;
+      --text-secondary: #666666;
+      --radius: 8px;
+      --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: var(--font-main);
+      color: var(--text-primary);
+      background-color: var(--light-gray);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .offline-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    
+    .logo {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--tesco-blue);
+      margin-bottom: 30px;
+    }
+    
+    .offline-icon {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 24px;
+      opacity: 0.8;
+    }
+    
+    .title {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    
+    .message {
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--text-secondary);
+      margin-bottom: 30px;
+    }
+    
+    .button {
+      background-color: var(--tesco-blue);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    .cached-data {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: var(--light-gray);
+      border-radius: var(--radius);
+      width: 100%;
+    }
+    
+    .cached-title {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    
+    .cached-item {
+      padding: 12px;
+      background-color: white;
+      border-radius: var(--radius);
+      margin-bottom: 8px;
+      text-align: left;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .cached-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .item-name {
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+    
+    .item-price {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--tesco-blue);
+    }
+  </style>
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <div class="offline-container">
+    <div class="logo">tesco</div>
+    
+    <span class="material-icons offline-icon" style="font-size: 120px;">wifi_off</span>
+    
+    <h1 class="title">You're offline</h1>
+    <p class="message">We can't connect to the internet right now. Check your connection and try again. Some previously loaded data may be available below.</p>
+    
+    <button class="button" onclick="attemptReconnect()">
+      <span class="material-icons" style="vertical-align: middle; margin-right: 6px; font-size: 18px;">refresh</span>
+      Try Again
+    </button>
+    
+    <div class="cached-data">
+      <h2 class="cached-title">Previously Viewed Items</h2>
+      <div id="cachedItems">
+        <!-- Cached items will be displayed here when available -->
+        <div class="cached-item">
+          <div class="item-name">Sunlight Washing Powder 2kg</div>
+          <div class="item-price">$4.99</div>
+        </div>
+        <div class="cached-item">
+          <div class="item-name">Fresh Milk 1L</div>
+          <div class="item-price">$1.29</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // Function to attempt reconnection
+    function attemptReconnect() {
+      // Check network status
+      if (navigator.onLine) {
+        // If we're back online, redirect to the home page
+        window.location.href = '/';
+      } else {
+        // Still offline, show an alert
+        alert('You are still offline. Please check your internet connection and try again.');
+      }
+    }
+    
+    // Listen for online event
+    window.addEventListener('online', () => {
+      // When we detect that we're back online, reload the page
+      window.location.reload();
+    });
+    
+    // Try to load cached items from localStorage if available
+    document.addEventListener('DOMContentLoaded', () => {
+      try {
+        const cachedItems = JSON.parse(localStorage.getItem('tesco-cached-items'));
+        const cachedItemsContainer = document.getElementById('cachedItems');
+        
+        if (cachedItems && cachedItems.length > 0 && cachedItemsContainer) {
+          // Clear the default items
+          cachedItemsContainer.innerHTML = '';
+          
+          // Add cached items
+          cachedItems.forEach(item => {
+            const itemElement = document.createElement('div');
+            itemElement.className = 'cached-item';
+            itemElement.innerHTML = `
+              <div class="item-name">${item.name}</div>
+              <div class="item-price">${item.price}</div>
+            `;
+            cachedItemsContainer.appendChild(itemElement);
+          });
+        }
+      } catch (error) {
+        console.error('Error loading cached items:', error);
+      }
+    });
+  </script>
+</body>
+</html>

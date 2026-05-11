@@ -1,0 +1,29 @@
+name: Auto Deploy to Replit
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Install Replit CLI
+        run: npm install -g @replit/replit-cli
+        
+      - name: Deploy to Replit
+        env:
+          REPLIT_TOKEN: ${{ secrets.REPLIT_TOKEN }}
+        run: |
+          echo "Starting deployment to Replit..."
+          replit auth --token $REPLIT_TOKEN
+          replit deployments create
+          echo "Deployment started. You will need to promote it in the Replit dashboard."

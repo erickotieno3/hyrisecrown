@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap files
+Sitemap: https://hyrisecrown.com/sitemap.xml
+
+# Domain verification file
+Allow: /.well-known/custom-domain-verification
+
+# Temporary diagnostic files
+Allow: /health
+Allow: /ping
+Allow: /barebones
+
+# Disallow admin area
+Disallow: /admin
+Disallow: /admin-dashboard.html

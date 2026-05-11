@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-03-17T21:11:27.204Z",
+  "totalProductsFetched": 28,
+  "storesMonitored": [
+    "Tesco",
+    "Sainsbury's",
+    "Asda",
+    "Walmart",
+    "eBay UK",
+    "eBay US"
+  ],
+  "priceChangesDetected": 0,
+  "topSavings": [],
+  "dataFiles": {
+    "prices": "real-time-prices.json",
+    "comparison": "price-comparison.json",
+    "changes": null
+  }
+}

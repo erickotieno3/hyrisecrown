@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="35" y="15" width="30" height="70" rx="3" fill="#f0f0f0"/>
+  <rect x="37" y="17" width="26" height="66" rx="2" fill="#ffffff"/>
+  <text x="50" y="40" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#0078D7">FRESH</text>
+  <text x="50" y="55" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#0078D7">MILK</text>
+  <text x="50" y="70" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#333333">1L</text>
+  <path d="M40 30 L60 30" stroke="#0078D7" stroke-width="1"/>
+  <path d="M40 75 L60 75" stroke="#0078D7" stroke-width="1"/>
+  <circle cx="50" cy="85" r="2" fill="#0078D7"/>
+</svg>

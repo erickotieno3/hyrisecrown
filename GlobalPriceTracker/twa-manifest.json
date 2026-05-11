@@ -1,0 +1,64 @@
+{
+  "packageId": "com.hyrisecrown.tescopricecomparison",
+  "host": "hyrisecrown.com",
+  "name": "Hyrise Crown Price Compare",
+  "launcherName": "HyriseCrown",
+  "display": "standalone",
+  "themeColor": "#00539F",
+  "navigationColor": "#00539F",
+  "navigationColorDark": "#003070",
+  "navigationDividerColor": "#CCCCCC",
+  "navigationDividerColorDark": "#444444",
+  "backgroundColor": "#ffffff",
+  "enableNotifications": true,
+  "startUrl": "/?utm_source=twa",
+  "iconUrl": "https://hyrisecrown.com/icons/icon-512x512.png",
+  "maskableIconUrl": "https://hyrisecrown.com/icons/icon-512x512.png",
+  "monochromeIconUrl": "https://hyrisecrown.com/icons/icon-192x192.png",
+  "appVersion": "1.0.0",
+  "appVersionCode": 1,
+  "signingMode": "mine",
+  "generatorApp": "pwa-builder",
+  "webManifestUrl": "https://hyrisecrown.com/manifest.json",
+  "isChromeOSOnly": false,
+  "isMetaQuest": false,
+  "features": {
+    "locationDelegation": {
+      "enabled": false
+    },
+    "playBilling": {
+      "enabled": false
+    }
+  },
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "enableSiteSettingsShortcut": true,
+  "orientation": "portrait",
+  "fingerprints": [],
+  "serviceAccountJsonFile": null,
+  "shortcuts": [
+    {
+      "name": "Compare Prices",
+      "shortName": "Compare",
+      "url": "/compare",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Trending Deals",
+      "shortName": "Deals",
+      "url": "/trending",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ],
+  "webAppManifest": {
+    "name": "Hyrise Crown Price Compare",
+    "short_name": "HyriseCrown",
+    "description": "Compare supermarket prices globally across Tesco, Walmart, Carrefour and more.",
+    "theme_color": "#00539F",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "start_url": "/?utm_source=pwa",
+    "categories": ["shopping", "utilities", "finance"]
+  }
+}

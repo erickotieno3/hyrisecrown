@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tesco Price Comparison - Static Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    h1 {
+      color: #00539f;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .content {
+      padding: 15px;
+      background-color: #f9f9f9;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    
+    button {
+      background-color: #00539f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 5px;
+    }
+    
+    button:hover {
+      background-color: #003e77;
+    }
+    
+    .reset {
+      background-color: #e10600;
+    }
+    
+    .reset:hover {
+      background-color: #b30500;
+    }
+    
+    .actions {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .time-display {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tesco Price Comparison</h1>
+    
+    <div class="content">
+      <h2>Static HTML Test Page</h2>
+      <p>This is a simple static HTML file served directly from the root directory.</p>
+      <p>If you can see this page, it means basic HTML rendering is working correctly.</p>
+    </div>
+    
+    <div class="content">
+      <h3>Interactive Counter</h3>
+      <p>Counter value: <span id="counter">0</span></p>
+      
+      <div class="actions">
+        <button id="increment">Increment</button>
+        <button id="reset" class="reset">Reset</button>
+      </div>
+    </div>
+    
+    <div class="time-display" id="time">
+      Current time: Loading...
+    </div>
+  </div>
+
+  <script>
+    // Simple counter functionality
+    let count = 0;
+    const counterElement = document.getElementById('counter');
+    const timeElement = document.getElementById('time');
+    
+    // Update the counter display
+    function updateCounter() {
+      counterElement.textContent = count;
+    }
+    
+    // Setup button click handlers
+    document.getElementById('increment').addEventListener('click', function() {
+      count++;
+      updateCounter();
+    });
+    
+    document.getElementById('reset').addEventListener('click', function() {
+      count = 0;
+      updateCounter();
+    });
+    
+    // Update time display
+    function updateTime() {
+      timeElement.textContent = 'Current time: ' + new Date().toLocaleTimeString();
+    }
+    
+    // Update time immediately and then every second
+    updateTime();
+    setInterval(updateTime, 1000);
+    
+    // Log success to console
+    console.log('Static HTML page loaded successfully!');
+  </script>
+</body>
+</html>

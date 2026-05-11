@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tesco Vendor Hub - Quick Access Portal</title>
+  <style>
+    /* Simple, clean styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #00539F;
+      padding-bottom: 20px;
+    }
+    .tesco-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    .logo-text {
+      font-size: 32px;
+      font-weight: bold;
+      color: #EE1C2E;
+    }
+    .logo-bars {
+      display: flex;
+      flex-direction: column;
+      margin-left: 5px;
+    }
+    .logo-bar {
+      width: 20px;
+      height: 5px;
+      background-color: #00539F;
+      margin-bottom: 3px;
+    }
+    h1 {
+      color: #00539F;
+      margin: 10px 0;
+    }
+    .subtitle {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .card h2 {
+      color: #00539F;
+      margin-top: 0;
+    }
+    .card p {
+      color: #666;
+      margin-bottom: 15px;
+    }
+    .link-button {
+      display: inline-block;
+      background-color: #00539F;
+      color: white;
+      padding: 10px 18px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background-color 0.2s;
+    }
+    .link-button:hover {
+      background-color: #003b71;
+    }
+    .direct-access {
+      margin-top: 10px;
+    }
+    .highlight {
+      background-color: #f5f8ff;
+      padding: 15px;
+      border-radius: 4px;
+      border-left: 3px solid #00539F;
+      margin: 20px 0;
+    }
+    .highlight h3 {
+      margin-top: 0;
+      color: #00539F;
+    }
+    .credentials {
+      background-color: #fffbf0;
+      border-left: 3px solid #f0b400;
+      padding: 15px;
+      border-radius: 4px;
+      margin: 20px 0;
+    }
+    .credentials h3 {
+      margin-top: 0;
+      color: #f0b400;
+    }
+    .credential-item {
+      margin-bottom: 10px;
+    }
+    .credential-label {
+      font-weight: bold;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+      color: #777;
+      font-size: 14px;
+    }
+    .ribbon {
+      position: absolute;
+      top: 20px;
+      right: -34px;
+      background-color: #EE1C2E;
+      color: white;
+      padding: 5px 30px;
+      transform: rotate(45deg);
+      font-size: 12px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="tesco-logo">
+        <div class="logo-text">TESCO</div>
+        <div class="logo-bars">
+          <div class="logo-bar"></div>
+          <div class="logo-bar"></div>
+          <div class="logo-bar"></div>
+          <div class="logo-bar"></div>
+        </div>
+      </div>
+      <h1>Vendor Quick Access Hub</h1>
+      <p class="subtitle">Your central portal for all vendor operations</p>
+    </div>
+    
+    <div class="highlight">
+      <h3>Quick Access Links</h3>
+      <p>Choose the appropriate portal based on your needs below:</p>
+    </div>
+    
+    <div class="card-container">
+      <div class="card">
+        <div class="ribbon">RECOMMENDED</div>
+        <h2>Main Vendor Portal</h2>
+        <p>Access the complete vendor dashboard with full functionality for price updates, inventory management, and analytics.</p>
+        <a href="/vendor-access" class="link-button">Access Portal</a>
+      </div>
+      
+      <div class="card">
+        <h2>Tesco Vendor Panel</h2>
+        <p>Specialized portal for Tesco vendors with streamlined interface for quick price updates and promotions.</p>
+        <a href="/tesco-vendor" class="link-button">Tesco Vendors</a>
+      </div>
+      
+      <div class="card">
+        <h2>Legacy Vendor Login</h2>
+        <p>Traditional vendor login page for established vendors with existing accounts.</p>
+        <a href="/vendor-login" class="link-button">Login Page</a>
+      </div>
+    </div>
+    
+    <div class="credentials">
+      <h3>Vendor Credentials</h3>
+      <p>Use these demo credentials to access the vendor portals:</p>
+      
+      <div class="credential-item">
+        <span class="credential-label">Tesco Vendor:</span> 
+        <span>tesco@vendor.com / VendorTesco!2024#</span>
+      </div>
+      
+      <div class="credential-item">
+        <span class="credential-label">Walmart Vendor:</span> 
+        <span>walmart@vendor.com / WalmartVend!2024#</span>
+      </div>
+      
+      <div class="credential-item">
+        <span class="credential-label">Amazon Vendor:</span> 
+        <span>amazon@vendor.com / AmazonVend!2024#</span>
+      </div>
+    </div>
+    
+    <div class="highlight">
+      <h3>URL Reference</h3>
+      <p>The direct URL to this Vendor Hub is:</p>
+      <p style="font-weight: bold; word-break: break-all;">https://a4749bdf-c5e6-4c33-87d1-5f5f180970bb-00-2k1ghfi4i47hj.worf.replit.dev/vendor-hub</p>
+      <p style="margin-top: 15px;">All other vendor URLs can be accessed through the links above.</p>
+    </div>
+    
+    <div class="footer">
+      <p>&copy; 2024 Tesco Price Comparison. All rights reserved.</p>
+      <p>Domain: hyrisecrown.com</p>
+    </div>
+  </div>
+</body>
+</html>

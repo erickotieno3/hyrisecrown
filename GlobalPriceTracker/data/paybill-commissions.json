@@ -1,0 +1,20 @@
+[
+  {
+    "id": "A1B2C3D4E5F60708",
+    "transactionId": "829D584243F927CC",
+    "transactionType": "TOP_UP",
+    "amount": 1000,
+    "commissionAmount": 15,
+    "date": "2025-05-04T18:24:51.178Z",
+    "processed": true
+  },
+  {
+    "id": "F1E2D3C4B5A60708",
+    "transactionId": "907BC5D4DA02D16E",
+    "transactionType": "AIRTIME_PURCHASE",
+    "amount": 200,
+    "commissionAmount": 5,
+    "date": "2025-05-04T18:25:40.382Z",
+    "processed": true
+  }
+]

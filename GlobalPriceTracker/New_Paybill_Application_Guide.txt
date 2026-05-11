@@ -1,0 +1,90 @@
+HOW TO APPLY FOR A NEW PAYBILL NUMBER
+==================================
+
+Instead of trying to change the ownership/name of an existing paybill number (787878) that's registered to another entity (KACH COMM SOLUTIONS), a better approach is to apply for a brand new paybill number for Hyrise Crown. Here's how to do it:
+
+FOR M-PESA (SAFARICOM):
+-----------------------
+
+1. REQUIREMENTS:
+   - Business registration certificate for Hyrise Crown (Registration No. BN-EZC3Z67A)
+   - KRA PIN certificate
+   - ID copy of the business owner/authorized signatory
+   - Recent passport photos of the business owner/authorized signatory
+   - Business permit/trade license
+   - Bank account details (National Bank Kisumu Kenya account 01521209171200)
+   - Letter of application on company letterhead
+
+2. APPLICATION PROCESS:
+   a) Visit a Safaricom Shop or M-PESA Business Center
+   b) Request the "Lipa Na M-PESA Business Request Form"
+   c) Fill out the form with your business details
+   d) Submit the form along with all required documents
+   e) Pay the application fee (typically between KES 999 and KES 1,500)
+
+3. APPROVAL PROCESS:
+   - The application usually takes 5-7 business days for review
+   - Once approved, you'll receive an SMS notification with your new paybill number
+   - The system has been configured to work with the new paybill number 959595
+
+4. SETTING UP:
+   - Once you receive your new paybill number, update the NUMBER_PAYBILL constant in your code
+   - Test the new paybill number with small transactions
+   - Update all your marketing materials and communications with the new number
+
+FOR AIRTEL MONEY:
+-----------------
+
+1. REQUIREMENTS:
+   - Similar to M-PESA requirements
+   - Business registration documents
+   - KRA PIN
+   - ID of directors/owners
+   - Bank account details
+
+2. APPLICATION PROCESS:
+   a) Visit an Airtel Money business center
+   b) Request the merchant/paybill application form
+   c) Submit completed application with required documents
+   d) Pay applicable fees
+
+ADVANTAGES OF HAVING YOUR OWN PAYBILL:
+-------------------------------------
+
+1. BRAND OWNERSHIP:
+   - The paybill will display "Hyrise Crown" instead of "KACH COMM SOLUTIONS"
+   - Creates trust with your customers who see your actual business name
+
+2. DIRECT COMMISSION MANAGEMENT:
+   - All commissions will go directly to your account
+   - No need to request transfers from a third party
+
+3. CONTROL AND FLEXIBILITY:
+   - Full access to transaction reports and data
+   - Ability to integrate with your own systems
+   - Can modify commission rates as needed
+
+4. CUSTOMER CONFIDENCE:
+   - Customers see your registered business name on receipts
+   - Professional appearance builds trust
+
+ESTIMATED TIMEFRAME:
+-------------------
+Application to approval: 5-7 business days
+Integration testing: 1-2 days
+Total implementation: 1-2 weeks
+
+COSTS:
+------
+Application fee: KES 999 - 1,500 (one-time)
+Monthly fee: KES 0 - 1,000 (varies based on transaction volume)
+
+NEXT STEPS:
+----------
+1. Print the application form or visit a Safaricom/Airtel shop
+2. Gather all required documentation
+3. Submit application
+4. Upon approval, update your systems with the new paybill number
+5. Inform customers of your new paybill number
+
+Note: The scripts have been pre-configured with paybill number 959595, which you can update to match the actual number you receive upon approval.

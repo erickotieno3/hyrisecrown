@@ -54,14 +54,14 @@ export default function PlayConsoleHandoffPage() {
             </div>
             <div>
               <p className="font-medium mb-1">Short description</p>
-              <p className="text-muted-foreground">Compare grocery and household prices across stores, find the best deals fast, and browse trusted product links with AI search and voice search.</p>
+              <p className="text-muted-foreground">Compare grocery and household prices across stores with AI search and voice search.</p>
             </div>
             <div>
               <p className="font-medium mb-1">Full description add-on</p>
               <p className="text-muted-foreground">
-                Hyrise Crown Price Comparison helps shoppers compare grocery and household prices across multiple stores and marketplaces in one place. Use AI-powered product discovery, voice search, and live price tracking to find better deals faster. The app includes clear affiliate disclosures so you always know when a link may earn us a commission at no extra cost to you.
+                Hyrise Crown Price Comparison helps shoppers compare grocery and household prices across multiple stores and marketplaces in one place. Use AI-powered product discovery, voice search, and live updates to find product information faster. The app includes affiliate disclosures so you always know when a link may earn us a commission.
                 <br /><br />
-                Browse trusted retailer links, save time, and make smarter buying decisions with a simple shopping experience built for clarity and transparency. We also support Medisave UK affiliate shopping for medical supplies, with disclosure shown before any affiliate content.
+                Browse retailer links, save time, and make informed buying decisions with a simple shopping experience built for clarity and transparency. We also support Medisave UK affiliate shopping for medical supplies, with disclosure shown before any affiliate content.
                 <br /><br />
                 Your privacy matters. We explain what data we collect, why we collect it, and how you can manage or delete it in our Privacy Policy. Camera access is used only for visual product search, microphone access is used only for voice search, and notifications are used only for price alerts you request.
                 <br /><br />

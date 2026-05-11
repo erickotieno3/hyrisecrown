@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Play Submission Guide – Hyrise Crown</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f7fa; color: #1a1a2e; }
+    header { background: #00539F; color: white; padding: 24px 32px; }
+    header h1 { font-size: 24px; }
+    header p { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+    .container { max-width: 860px; margin: 32px auto; padding: 0 16px; }
+    .card { background: white; border-radius: 12px; padding: 28px 32px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .card h2 { font-size: 18px; color: #00539F; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+    .step-badge { background: #00539F; color: white; border-radius: 50%; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: bold; flex-shrink: 0; }
+    .card p, .card li { font-size: 15px; line-height: 1.7; color: #444; }
+    .card ul, .card ol { padding-left: 20px; margin-top: 10px; }
+    .card li { margin-bottom: 8px; }
+    .info-box { background: #e8f4ff; border-left: 4px solid #00539F; border-radius: 6px; padding: 14px 18px; margin: 12px 0; font-size: 14px; color: #003d7a; }
+    .success-box { background: #e8f9ee; border-left: 4px solid #28a745; border-radius: 6px; padding: 14px 18px; margin: 12px 0; font-size: 14px; color: #155724; }
+    .warning-box { background: #fff8e1; border-left: 4px solid #ffc107; border-radius: 6px; padding: 14px 18px; margin: 12px 0; font-size: 14px; color: #7a5f00; }
+    .btn { display: inline-block; background: #00539F; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-size: 15px; font-weight: 600; margin-top: 12px; }
+    .btn:hover { background: #003d7a; }
+    .btn-green { background: #28a745; }
+    .btn-green:hover { background: #1e7e34; }
+    code { background: #f0f0f0; border-radius: 4px; padding: 2px 7px; font-family: 'Courier New', monospace; font-size: 13px; color: #c0392b; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14px; }
+    th { background: #f0f4ff; color: #00539F; text-align: left; padding: 10px 14px; }
+    td { padding: 10px 14px; border-bottom: 1px solid #eee; }
+    tr:last-child td { border-bottom: none; }
+    .tag { display: inline-block; background: #e0ecff; color: #00539F; border-radius: 20px; padding: 3px 12px; font-size: 12px; font-weight: 600; }
+    .ready { color: #28a745; font-weight: 600; }
+    .pending { color: #ffc107; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📱 Google Play Store – Submission Guide</h1>
+    <p>Hyrise Crown Price Compare · Package: com.hyrisecrown.tescopricecomparison · Account: erickotienokjv@gmail.com</p>
+  </header>
+
+  <div class="container">
+
+    <!-- Status Overview -->
+    <div class="card">
+      <h2><span class="step-badge">✓</span> Preparation Status</h2>
+      <table>
+        <tr><th>Requirement</th><th>Status</th></tr>
+        <tr><td>PWA Web Manifest (manifest.json)</td><td class="ready">✅ Ready</td></tr>
+        <tr><td>Service Worker (offline support)</td><td class="ready">✅ Ready</td></tr>
+        <tr><td>App Icons (all sizes)</td><td class="ready">✅ Ready</td></tr>
+        <tr><td>HTTPS / Secure Domain</td><td class="ready">✅ hyrisecrown.com</td></tr>
+        <tr><td>assetlinks.json (domain verification)</td><td class="pending">⏳ SHA-256 fingerprint needed after step 3</td></tr>
+        <tr><td>TWA Manifest Config</td><td class="ready">✅ Ready (twa-manifest.json)</td></tr>
+        <tr><td>Google Play Developer Account</td><td class="ready">✅ Paid &amp; Active</td></tr>
+        <tr><td>App Package ID</td><td class="ready">✅ com.hyrisecrown.tescopricecomparison</td></tr>
+      </table>
+    </div>
+
+    <!-- Step 1 -->
+    <div class="card">
+      <h2><span class="step-badge">1</span> Deploy Your App First</h2>
+      <p>Before generating the Android package, you must deploy the app so PWABuilder can access it via a live URL.</p>
+      <div class="info-box">
+        <strong>Your live URL will be:</strong> <code>https://hyrisecrown.com</code><br>
+        Make sure DNS is pointing to your Replit deployment before proceeding.
+      </div>
+      <p style="margin-top:12px">Click <strong>"Publish"</strong> on the Replit Deploy button to get your app live, then proceed to step 2.</p>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="card">
+      <h2><span class="step-badge">2</span> Generate Android APK via PWABuilder</h2>
+      <p>PWABuilder is a free Microsoft tool that converts your web app into a ready-to-upload Android app bundle.</p>
+      <ol>
+        <li>Go to <strong>pwabuilder.com</strong></li>
+        <li>Enter your URL: <code>https://hyrisecrown.com</code></li>
+        <li>Click <strong>"Start"</strong> – it will analyse your manifest and service worker</li>
+        <li>When the report shows, click <strong>"Package for Stores"</strong></li>
+        <li>Select <strong>"Google Play"</strong></li>
+        <li>Fill in:
+          <ul>
+            <li>Package ID: <code>com.hyrisecrown.tescopricecomparison</code></li>
+            <li>App name: <code>Hyrise Crown Price Compare</code></li>
+            <li>Version: <code>1.0.0</code> / Version code: <code>1</code></li>
+            <li>Signing: choose <strong>"Let PWABuilder handle signing"</strong> for easiest setup</li>
+          </ul>
+        </li>
+        <li>Click <strong>"Generate"</strong> – download the ZIP file</li>
+      </ol>
+      <a href="https://www.pwabuilder.com" target="_blank" class="btn">Open PWABuilder →</a>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="card">
+      <h2><span class="step-badge">3</span> Update assetlinks.json with Your Signing Key</h2>
+      <p>After generating the APK in PWABuilder, it will show you a <strong>SHA-256 certificate fingerprint</strong>. You need to add this to your app for Google to verify the domain.</p>
+      <div class="warning-box">
+        <strong>Important:</strong> Copy the SHA-256 fingerprint from the PWABuilder download page and contact your developer to update <code>public/.well-known/assetlinks.json</code> with the real fingerprint before submitting to Play Store.
+      </div>
+      <p>The file is already created at: <code>hyrisecrown.com/.well-known/assetlinks.json</code></p>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="card">
+      <h2><span class="step-badge">4</span> Submit to Google Play Console</h2>
+      <ol>
+        <li>Go to <a href="https://play.google.com/console" target="_blank">play.google.com/console</a> and sign in with <code>erickotienokjv@gmail.com</code></li>
+        <li>Click <strong>"Create app"</strong></li>
+        <li>Fill in app details:
+          <ul>
+            <li>App name: <code>Hyrise Crown Price Compare</code></li>
+            <li>Default language: English</li>
+            <li>App type: App</li>
+            <li>Free / Paid: Free</li>
+          </ul>
+        </li>
+        <li>Go to <strong>Production → Create new release</strong></li>
+        <li>Upload the <code>.aab</code> file from your PWABuilder ZIP</li>
+        <li>Fill in the release notes and click <strong>"Review release"</strong></li>
+        <li>Complete the <strong>store listing</strong>:
+          <ul>
+            <li>Short description: <em>Compare supermarket prices globally – save money shopping smarter</em></li>
+            <li>Full description: (see below)</li>
+            <li>Category: Shopping</li>
+            <li>Screenshots: at least 2 phone screenshots</li>
+            <li>Feature graphic: 1024×500px banner image</li>
+          </ul>
+        </li>
+        <li>Submit for review – Google typically reviews in <strong>3–7 days</strong></li>
+      </ol>
+      <a href="https://play.google.com/console" target="_blank" class="btn btn-green">Open Play Console →</a>
+    </div>
+
+    <!-- App Store Description -->
+    <div class="card">
+      <h2>📝 Ready-to-Use Store Description</h2>
+      <p style="margin-bottom:12px"><em>Copy this into your Google Play store listing:</em></p>
+      <div class="info-box" style="white-space:pre-line; font-size:14px; line-height:1.8">
+<strong>Hyrise Crown Price Compare</strong>
+
+Stop overpaying for groceries. Hyrise Crown helps you compare prices across the world's biggest supermarkets — Tesco, Walmart, Carrefour, Aldi, and more — all in one place.
+
+🛒 <strong>Features:</strong>
+• Real-time price comparison across multiple stores
+• Search by product name or scan with your camera
+• Voice search in 15 languages including Swahili
+• Track trending deals and price drops
+• Multi-country support – shop smarter wherever you are
+• Offline access – works without internet
+• Earn rewards for smart shopping milestones
+• M-Pesa paybill integration for Kenyan shoppers
+
+🌍 Supported countries: Kenya, UK, USA, Germany, France, Spain and more.
+
+Available on web at hyrisecrown.com
+      </div>
+    </div>
+
+    <!-- App Details Summary -->
+    <div class="card">
+      <h2>📋 App Details Summary</h2>
+      <table>
+        <tr><th>Field</th><th>Value</th></tr>
+        <tr><td>Package Name</td><td><code>com.hyrisecrown.tescopricecomparison</code></td></tr>
+        <tr><td>App Name</td><td>Hyrise Crown Price Compare</td></tr>
+        <tr><td>Short Name</td><td>HyriseCrown</td></tr>
+        <tr><td>Developer Account</td><td>erickotienokjv@gmail.com</td></tr>
+        <tr><td>Category</td><td>Shopping</td></tr>
+        <tr><td>Content Rating</td><td>Everyone</td></tr>
+        <tr><td>Version</td><td>1.0.0 (code: 1)</td></tr>
+        <tr><td>Min Android Version</td><td>Android 5.0 (API 21)</td></tr>
+        <tr><td>Target SDK</td><td>34 (Android 14)</td></tr>
+        <tr><td>Website</td><td>https://hyrisecrown.com</td></tr>
+        <tr><td>Privacy Policy URL</td><td>https://hyrisecrown.com/privacy</td></tr>
+      </table>
+    </div>
+
+  </div>
+</body>
+</html>

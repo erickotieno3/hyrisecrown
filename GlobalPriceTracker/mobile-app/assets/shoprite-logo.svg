@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="140" height="60" viewBox="0 0 140 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="20" y="10" width="100" height="40" rx="5" fill="#e10600"/>
+  <rect x="25" y="15" width="90" height="30" rx="3" fill="#fff"/>
+  <text x="70" y="35" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#e10600">SHOPRITE</text>
+  <circle cx="32" cy="22" r="3" fill="#e10600"/>
+  <circle cx="108" cy="22" r="3" fill="#e10600"/>
+  <path d="M32 25 L108 25" stroke="#e10600" stroke-width="1"/>
+  <path d="M40 40 L45 30 L50 40 L55 30 L60 40 L65 30 L70 40 L75 30 L80 40 L85 30 L90 40 L95 30 L100 40" stroke="#e10600" stroke-width="1"/>
+</svg>

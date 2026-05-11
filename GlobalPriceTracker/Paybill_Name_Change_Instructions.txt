@@ -1,0 +1,49 @@
+INSTRUCTIONS FOR UPDATING PAYBILL BUSINESS NAME
+----------------------------------------------
+
+For M-PESA (Safaricom) in Kenya:
+
+1. Visit a Safaricom Retail Shop or M-PESA Business Center
+   - Bring original business registration documents
+   - Bring ID of the authorized signatory
+   - Bring proof of business address (utility bill)
+   - Bring bank statements showing the connection to account 01521209171200
+
+2. Fill out the "Business Name Change Form"
+   - This form is provided at Safaricom shops
+   - Note that you may need to pay a processing fee (around Ksh 1,000 to 2,000)
+
+3. Submit a formal letter (use the template provided)
+   - Make sure to keep a copy stamped by Safaricom as proof of submission
+
+4. Follow-up procedure
+   - Request a reference number for your application
+   - Get contact details of the person handling your request
+   - Business name changes typically take 5-7 business days to process
+
+5. After approval
+   - Conduct a test transaction to confirm the name change
+   - Update all your marketing materials with the new business name
+   - Inform your customers about the name change
+
+For Airtel Money (if applicable):
+Follow a similar process but visit an Airtel Money Business Center.
+
+For Other Mobile Money Providers:
+The process is generally similar but may have slight variations. Always call their customer service first to confirm requirements.
+
+IMPORTANT NOTES:
+---------------
+1. Do not make any major changes to your account during this transition period.
+2. Continue to monitor transfers to ensure they're correctly attributed to your business.
+3. Consider creating a communication to your customers explaining the name change.
+4. If the process takes longer than 10 business days, follow up daily.
+5. Keep records of all communications with the mobile money provider.
+
+If rejected, common reasons include:
+- Incomplete documentation
+- Discrepancies between documents
+- Outstanding fees or charges
+- Previous account issues
+
+If your request is rejected, address the specific reason and resubmit.

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="100" cy="100" r="90" fill="#eefff5" stroke="#00994d" stroke-width="4"/>
+  <path d="M100 40 L120 70 L160 80 L120 90 L100 140 L80 90 L40 80 L80 70 Z" fill="#33cc66" stroke="#00994d" stroke-width="3"/>
+  
+  <!-- Pound symbol -->
+  <circle cx="100" cy="100" r="30" fill="#ffffff" stroke="#00994d" stroke-width="2"/>
+  <path d="M90 80 L110 80 M100 75 L100 125 M85 100 L115 100 M85 115 L115 115" stroke="#00994d" stroke-width="5" stroke-linecap="round"/>
+  
+  <!-- Bottom text -->
+  <text x="100" y="180" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#00994d">BUDGET GURU</text>
+</svg>

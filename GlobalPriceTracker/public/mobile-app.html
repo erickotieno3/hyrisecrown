@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0078D7">
+  <title>Tesco Price Comparison - Mobile App</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="assets/icon-192x192.png">
+  <link rel="apple-touch-icon" href="assets/icon-192x192.png">
+  
+  <!-- Core CSS -->
+  <style>
+    :root {
+      --tesco-blue: #0078D7;
+      --tesco-dark-blue: #00539f;
+      --tesco-red: #e10600;
+      --light-gray: #f5f5f5;
+      --medium-gray: #d0d0d0;
+      --dark-gray: #333333;
+      --text-primary: #222222;
+      --text-secondary: #666666;
+      --radius: 8px;
+      --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: var(--font-main);
+      color: var(--text-primary);
+      background-color: var(--light-gray);
+      overflow-x: hidden;
+      -webkit-tap-highlight-color: transparent;
+      padding-bottom: 60px; /* Space for bottom nav */
+    }
+    
+    /* Header Styles */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      background-color: white;
+      border-bottom: 1px solid var(--medium-gray);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: #222;
+    }
+    
+    .domain {
+      font-size: 14px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .language-selector {
+      padding: 5px 10px;
+      background: none;
+      border: 1px solid var(--medium-gray);
+      border-radius: var(--radius);
+      font-weight: 600;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background-color: var(--tesco-blue);
+      color: white;
+      padding: 24px 16px;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-size: 28px;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    
+    .button {
+      background-color: white;
+      color: var(--tesco-blue);
+      border: none;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 16px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      display: inline-block;
+      text-decoration: none;
+    }
+    
+    /* Country Selector */
+    .country-selector {
+      margin: 16px;
+      position: relative;
+    }
+    
+    .select-wrapper {
+      background: white;
+      border: 1px solid var(--medium-gray);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: var(--shadow);
+    }
+    
+    .country-flag {
+      width: 24px;
+      height: 16px;
+      margin-right: 8px;
+    }
+    
+    .country-select {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    
+    /* Featured Stores */
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 24px 16px 16px;
+    }
+    
+    .store-list {
+      display: flex;
+      gap: 8px;
+      padding: 0 16px;
+      overflow-x: auto;
+      /* Hide scrollbar for clean UI */
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    
+    .store-list::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .store-card {
+      min-width: 110px;
+      height: 90px;
+      background: white;
+      border-radius: var(--radius);
+      border: 1px solid var(--medium-gray);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+    }
+    
+    .store-logo {
+      max-width: 100%;
+      max-height: 60px;
+      object-fit: contain;
+    }
+    
+    /* Trending Deals */
+    .trending-deal {
+      margin: 16px;
+      padding: 16px;
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    .product-image {
+      width: 70px;
+      height: 70px;
+      border-radius: var(--radius);
+      object-fit: contain;
+      background: var(--light-gray);
+    }
+    
+    .product-details {
+      flex-grow: 1;
+    }
+    
+    .product-title {
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+    
+    .product-price {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--tesco-blue);
+    }
+    
+    .compare-button {
+      background: none;
+      border: none;
+      color: var(--tesco-blue);
+      font-size: 22px;
+      cursor: pointer;
+      padding: 8px;
+    }
+    
+    /* Newsletter */
+    .newsletter {
+      margin: 24px 16px;
+    }
+    
+    .newsletter-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    
+    .newsletter-subtitle {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+    
+    .newsletter-form {
+      display: flex;
+      gap: 8px;
+    }
+    
+    .email-input {
+      flex-grow: 1;
+      padding: 12px 16px;
+      border: 1px solid var(--medium-gray);
+      border-radius: var(--radius);
+      font-size: 16px;
+    }
+    
+    .subscribe-button {
+      background-color: var(--tesco-blue);
+      color: white;
+      border: none;
+      padding: 12px 16px;
+      border-radius: var(--radius);
+      font-weight: 500;
+      cursor: pointer;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: white;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding: 8px 0;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 4px 0;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 12px;
+    }
+    
+    .nav-item.active {
+      color: var(--tesco-blue);
+    }
+    
+    .nav-icon {
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+    
+    /* Google AdSense banner */
+    .ad-banner {
+      margin: 16px;
+      padding: 8px;
+      background: #f9f9f9;
+      border-radius: var(--radius);
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-secondary);
+      overflow: hidden;
+    }
+    
+    .ad-banner::before {
+      content: "Advertisement";
+      display: block;
+      margin-bottom: 4px;
+    }
+    
+    /* Loading indicator */
+    .loading {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 3px solid var(--medium-gray);
+      border-top-color: var(--tesco-blue);
+      animation: spin 1s infinite linear;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 200;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+    }
+    
+    .modal-content {
+      background: white;
+      border-radius: var(--radius);
+      width: 100%;
+      max-width: 400px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .modal-header {
+      padding: 16px;
+      border-bottom: 1px solid var(--medium-gray);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .modal-title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+    
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+    }
+    
+    .modal-body {
+      padding: 16px;
+    }
+    
+    /* Stripe payment form styling */
+    .payment-form {
+      margin-top: 16px;
+    }
+    
+    .form-group {
+      margin-bottom: 16px;
+    }
+    
+    .form-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--medium-gray);
+      border-radius: var(--radius);
+      font-size: 16px;
+    }
+    
+    .payment-button {
+      background-color: var(--tesco-blue);
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: var(--radius);
+      font-size: 16px;
+      font-weight: 500;
+      width: 100%;
+      cursor: pointer;
+    }
+    
+    /* Media queries */
+    @media (min-width: 768px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+      
+      .store-list {
+        justify-content: center;
+      }
+    }
+  </style>
+  
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <!-- Loading indicator -->
+  <div class="loading" id="loadingIndicator">
+    <div class="loading-spinner"></div>
+  </div>
+  
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">tesco</div>
+    <div class="domain">
+      <span class="material-icons" style="font-size: 18px;">language</span>
+      hyrisecrown.com
+    </div>
+    <select class="language-selector">
+      <option value="en">EN</option>
+      <option value="fr">FR</option>
+      <option value="de">DE</option>
+      <option value="it">IT</option>
+      <option value="es">ES</option>
+      <option value="sw">SW</option>
+    </select>
+  </header>
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Compare Supermarket Prices</h1>
+    <a href="#compare" class="button" id="startCompareButton" onclick="event.preventDefault(); document.getElementById('compareModal').style.display='flex'; document.body.style.overflow='hidden';">Start Comparing</a>
+  </section>
+  
+  <!-- Country Selector -->
+  <div class="country-selector">
+    <div class="select-wrapper">
+      <div class="country-select">
+        <img src="assets/kenya-flag.png" alt="Kenya Flag" class="country-flag">
+        <span>Kenya</span>
+      </div>
+      <span class="material-icons">expand_more</span>
+    </div>
+  </div>
+  
+  <!-- Google AdSense Banner -->
+  <div class="ad-banner" id="adBanner">
+    <!-- AdSense code will be inserted here via JavaScript -->
+    <div style="height: 60px; display: flex; align-items: center; justify-content: center; text-align: center;">
+      Google AdSense banner will appear here
+    </div>
+  </div>
+  
+  <!-- Featured Stores -->
+  <h2 class="section-title">Featured Stores</h2>
+  <div class="store-list">
+    <div class="store-card">
+      <img src="assets/tesco-logo.svg" alt="Tesco" class="store-logo">
+    </div>
+    <div class="store-card">
+      <img src="assets/carrefour-logo.svg" alt="Carrefour" class="store-logo">
+    </div>
+    <div class="store-card">
+      <img src="assets/naivas-logo.svg" alt="Naivas" class="store-logo">
+    </div>
+    <div class="store-card">
+      <img src="assets/walmart-logo.svg" alt="Walmart" class="store-logo">
+    </div>
+  </div>
+  
+  <!-- Location-Based Stores -->
+  <h2 class="section-title">Local Stores Near You</h2>
+  <div class="store-list">
+    <div class="store-card">
+      <img src="assets/aldi-logo.svg" alt="Aldi" class="store-logo">
+    </div>
+    <div class="store-card">
+      <img src="assets/lidl-logo.svg" alt="Lidl" class="store-logo">
+    </div>
+    <div class="store-card">
+      <img src="assets/quickmart-logo.svg" alt="Quickmart" class="store-logo">
+    </div>
+    <div class="store-card">
+      <img src="assets/shoprite-logo.svg" alt="Shoprite" class="store-logo">
+    </div>
+    <div class="store-card">
+      <img src="assets/tumaini-logo.svg" alt="Tumaini" class="store-logo">
+    </div>
+  </div>
+  
+  <!-- Trending Deals -->
+  <h2 class="section-title">Trending Deals</h2>
+  <div class="trending-deal">
+    <img src="assets/product-sunlight.svg" alt="Sunlight Washing Powder" class="product-image">
+    <div class="product-details">
+      <div class="product-title">Sunlight Washing Powder 2kg</div>
+      <div class="product-price">$4.99</div>
+    </div>
+    <a href="#compare" class="compare-button" aria-label="Compare Prices">
+      <span class="material-icons">search</span>
+    </a>
+  </div>
+  
+  <div class="trending-deal">
+    <img src="assets/product-milk.svg" alt="Fresh Milk" class="product-image">
+    <div class="product-details">
+      <div class="product-title">Fresh Milk 1L</div>
+      <div class="product-price">$1.29</div>
+    </div>
+    <a href="#compare" class="compare-button" aria-label="Compare Prices">
+      <span class="material-icons">search</span>
+    </a>
+  </div>
+  
+  <!-- Newsletter -->
+  <div class="newsletter">
+    <h2 class="newsletter-title">Newsletter</h2>
+    <p class="newsletter-subtitle">Sign up for updates on the latest deals and price drops</p>
+    <form class="newsletter-form" id="newsletterForm">
+      <input type="email" placeholder="Email address" class="email-input" required>
+      <button type="submit" class="subscribe-button">Subscribe</button>
+    </form>
+  </div>
+  
+  <!-- Bottom Navigation -->
+  <nav class="bottom-nav">
+    <a href="#" class="nav-item active" id="homeNavLink">
+      <span class="material-icons nav-icon">home</span>
+      <span>Home</span>
+    </a>
+    <a href="#search" class="nav-item" id="searchNavLink">
+      <span class="material-icons nav-icon">search</span>
+      <span>Search</span>
+    </a>
+    <a href="#compare" class="nav-item" id="compareNavLink">
+      <span class="material-icons nav-icon">compare_arrows</span>
+      <span>Compare</span>
+    </a>
+    <a href="#account" class="nav-item" id="accountNavLink">
+      <span class="material-icons nav-icon">person</span>
+      <span>Account</span>
+    </a>
+  </nav>
+  
+  <!-- Empty the redundant event listeners -->
+  
+  <!-- Compare Modal -->
+  <div class="modal" id="compareModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Compare Prices</h3>
+        <button class="modal-close" id="closeCompareModal">
+          <span class="material-icons">close</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="compareResults">
+          <h4>Sunlight Washing Powder 2kg</h4>
+          <div style="margin-top: 16px;">
+            <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <img src="assets/tesco-logo.svg" alt="Tesco" style="width: 40px; height: 25px; object-fit: contain;">
+                <span>Tesco</span>
+              </div>
+              <div style="font-weight: 600;">$4.99</div>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <img src="assets/carrefour-logo.svg" alt="Carrefour" style="width: 40px; height: 25px; object-fit: contain;">
+                <span>Carrefour</span>
+              </div>
+              <div style="font-weight: 600;">$5.49</div>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <img src="assets/naivas-logo.svg" alt="Naivas" style="width: 40px; height: 25px; object-fit: contain;">
+                <span>Naivas</span>
+              </div>
+              <div style="font-weight: 600;">$5.29</div>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <img src="assets/aldi-logo.svg" alt="Aldi" style="width: 40px; height: 25px; object-fit: contain;">
+                <span>Aldi</span>
+              </div>
+              <div style="font-weight: 600;">$5.19</div>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <img src="assets/lidl-logo.svg" alt="Lidl" style="width: 40px; height: 25px; object-fit: contain;">
+                <span>Lidl</span>
+              </div>
+              <div style="font-weight: 600;">$5.09</div>
+            </div>
+          </div>
+          <div style="margin-top: 24px; text-align: center;">
+            <div>Best savings at Tesco</div>
+            <div style="font-size: 20px; font-weight: 700; color: var(--tesco-blue); margin: 8px 0;">Save up to $0.50</div>
+            <a href="javascript:void(0)" class="button" style="background-color: var(--tesco-blue); color: white; width: 100%;" id="buyAtTescoButton">
+              Buy at Tesco <span class="material-icons" style="font-size: 16px; vertical-align: middle;">launch</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Search Modal -->
+  <div class="modal" id="searchModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Search Products</h3>
+        <button class="modal-close" id="closeSearchModal">
+          <span class="material-icons">close</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="searchForm">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search for products..." id="searchInput">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Category</label>
+            <select class="form-control" id="categorySelect">
+              <option value="">All Categories</option>
+              <option value="grocery">Grocery</option>
+              <option value="household">Household</option>
+              <option value="personal-care">Personal Care</option>
+              <option value="baby">Baby Products</option>
+              <option value="electronics">Electronics</option>
+            </select>
+          </div>
+          <button type="submit" class="payment-button">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Account Modal -->
+  <div class="modal" id="accountModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Account</h3>
+        <button class="modal-close" id="closeAccountModal">
+          <span class="material-icons">close</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="loginForm">
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" placeholder="Your email address" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" placeholder="Your password" required>
+          </div>
+          <button type="submit" class="payment-button">Sign In</button>
+        </form>
+        <div style="text-align: center; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--medium-gray);">
+          <p style="margin-bottom: 12px;">Don't have an account?</p>
+          <button id="showSignupForm" class="button" style="width: 100%;">Create Account</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Payment Modal -->
+  <div class="modal" id="paymentModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Payment</h3>
+        <button class="modal-close" id="closePaymentModal">
+          <span class="material-icons">close</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div style="text-align: center; margin-bottom: 16px;">
+          <div style="font-size: 14px; color: var(--text-secondary);">Upgrade to Premium</div>
+          <div style="font-size: 24px; font-weight: 700; margin: 8px 0;">$4.99 / month</div>
+          <div style="font-size: 14px; color: var(--text-secondary);">Unlock price alerts, historical data, and ad-free experience</div>
+        </div>
+        
+        <form id="paymentForm" class="payment-form">
+          <div class="form-group">
+            <label class="form-label">Card Information</label>
+            <div id="card-element" style="padding: 12px; border: 1px solid var(--medium-gray); border-radius: var(--radius);">
+              <!-- Stripe Elements Placeholder -->
+              <!-- This will be replaced by the Stripe Card Element -->
+              <div style="height: 24px; display: flex; align-items: center;">Card details placeholder</div>
+            </div>
+            <div id="card-errors" style="color: var(--tesco-red); margin-top: 8px; font-size: 14px;"></div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Cardholder Name</label>
+            <input type="text" class="form-control" placeholder="Name on card" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Billing Address</label>
+            <input type="text" class="form-control" placeholder="Street address" required>
+          </div>
+          
+          <div style="display: flex; gap: 8px;">
+            <div class="form-group" style="flex: 1;">
+              <label class="form-label">City</label>
+              <input type="text" class="form-control" required>
+            </div>
+            <div class="form-group" style="flex: 1;">
+              <label class="form-label">Zip / Postal Code</label>
+              <input type="text" class="form-control" required>
+            </div>
+          </div>
+          
+          <button type="submit" class="payment-button">Subscribe Now</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <!-- JavaScript -->
+  <script>
+    // Initialize elements
+    document.addEventListener('DOMContentLoaded', function() {
+      // Navigation and modal handling
+      const navItems = document.querySelectorAll('.nav-item');
+      const compareModal = document.getElementById('compareModal');
+      const searchModal = document.getElementById('searchModal');
+      const accountModal = document.getElementById('accountModal');
+      const paymentModal = document.getElementById('paymentModal');
+      const loadingIndicator = document.getElementById('loadingIndicator');
+      
+      // Initialize Google Analytics
+      initAnalytics();
+      
+      // Initialize Google AdSense
+      initAdsense();
+      
+      // Navigation event listeners
+      navItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+          e.preventDefault(); // Prevent hash URL navigation
+          navItems.forEach(navItem => navItem.classList.remove('active'));
+          this.classList.add('active');
+          
+          const href = this.getAttribute('href');
+          if (href === '#search' || href === '#') {
+            showModal(searchModal);
+          } else if (href === '#compare') {
+            showModal(compareModal);
+          } else if (href === '#account') {
+            showModal(accountModal);
+          }
+        });
+      });
+      
+      // Modal close buttons
+      document.getElementById('closeCompareModal').addEventListener('click', () => hideModal(compareModal));
+      document.getElementById('closeSearchModal').addEventListener('click', () => hideModal(searchModal));
+      document.getElementById('closeAccountModal').addEventListener('click', () => hideModal(accountModal));
+      document.getElementById('closePaymentModal').addEventListener('click', () => hideModal(paymentModal));
+      
+      // Compare buttons
+      const compareButtons = document.querySelectorAll('.compare-button');
+      compareButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          e.preventDefault(); // Prevent hash navigation
+          showModal(compareModal);
+        });
+      });
+      
+      // Newsletter form
+      const newsletterForm = document.getElementById('newsletterForm');
+      newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        showLoading();
+        
+        // Simulate API call
+        setTimeout(() => {
+          hideLoading();
+          alert('Thank you for subscribing to our newsletter!');
+          this.reset();
+          
+          // Track event with Google Analytics
+          if (window.gtag) {
+            window.gtag('event', 'newsletter_signup', {
+              'event_category': 'engagement',
+              'event_label': 'newsletter'
+            });
+          }
+        }, 1000);
+      });
+      
+      // Payment form
+      const showSignupForm = document.getElementById('showSignupForm');
+      showSignupForm.addEventListener('click', function() {
+        hideModal(accountModal);
+        showModal(paymentModal);
+      });
+      
+      const paymentForm = document.getElementById('paymentForm');
+      paymentForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        showLoading();
+        
+        // Simulate Stripe payment processing
+        setTimeout(() => {
+          hideLoading();
+          hideModal(paymentModal);
+          alert('Payment successful! You now have premium access.');
+          
+          // Track payment event
+          if (window.gtag) {
+            window.gtag('event', 'purchase', {
+              'transaction_id': 'T_' + Math.floor(Math.random() * 1000000),
+              'value': 4.99,
+              'currency': 'USD',
+              'items': [{
+                'id': 'premium_subscription',
+                'name': 'Premium Subscription',
+                'quantity': 1,
+                'price': 4.99
+              }]
+            });
+          }
+        }, 1500);
+      });
+      
+      // Buy at Tesco button
+      const buyAtTescoButton = document.getElementById('buyAtTescoButton');
+      if (buyAtTescoButton) {
+        buyAtTescoButton.addEventListener('click', function() {
+          alert('You will be redirected to Tesco to complete your purchase.');
+          
+          // Track outbound link click with Google Analytics
+          if (window.gtag) {
+            window.gtag('event', 'outbound_link', {
+              'event_category': 'engagement',
+              'event_label': 'tesco_purchase',
+              'transport_type': 'beacon'
+            });
+          }
+        });
+      }
+      
+      // Country selector (simplified)
+      const countrySelector = document.querySelector('.country-selector');
+      countrySelector.addEventListener('click', function() {
+        alert('Country selection will be implemented with real data from the backend API.');
+      });
+      
+      // Helper functions
+      function showModal(modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+      
+      function hideModal(modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+      
+      function showLoading() {
+        loadingIndicator.style.display = 'flex';
+      }
+      
+      function hideLoading() {
+        loadingIndicator.style.display = 'none';
+      }
+      
+      // Initialize Google Analytics
+      function initAnalytics() {
+        if (typeof window.gtag === 'undefined') {
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function() {
+            dataLayer.push(arguments);
+          };
+          gtag('js', new Date());
+          gtag('config', 'GOOGLE_ANALYTICS_ID'); // Will be replaced with actual ID
+          
+          // Install Google Analytics script
+          const script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=GOOGLE_ANALYTICS_ID'; // Will be replaced with actual ID
+          document.head.appendChild(script);
+          
+          console.log('Google Analytics initialized');
+        }
+      }
+      
+      // Initialize Google AdSense
+      function initAdsense() {
+        if (document.getElementById('adsenseScript')) return;
+        
+        const script = document.createElement('script');
+        script.id = 'adsenseScript';
+        script.async = true;
+        script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=GOOGLE_ADSENSE_CLIENT_ID'; // Will be replaced with actual client ID
+        script.crossOrigin = 'anonymous';
+        document.head.appendChild(script);
+        
+        console.log('Google AdSense initialized');
+      }
+    });
+    
+    // Mock WebSocket connection to demonstrate real-time capability
+    const connectWebSocket = () => {
+      console.log('Connecting to WebSocket...');
+      
+      // In a real implementation, this would connect to your actual WebSocket endpoint
+      const mockWebSocket = {
+        onmessage: null,
+        send: function(data) {
+          console.log('WebSocket message sent:', data);
+          
+          // Mock response after a short delay
+          setTimeout(() => {
+            if (this.onmessage) {
+              const message = {
+                data: JSON.stringify({
+                  type: 'price_update',
+                  productId: 1,
+                  prices: [
+                    { storeId: 1, storeName: 'Tesco', price: 4.99, currency: 'USD' },
+                    { storeId: 2, storeName: 'Carrefour', price: 5.49, currency: 'USD' },
+                    { storeId: 3, storeName: 'Naivas', price: 5.29, currency: 'USD' }
+                  ],
+                  timestamp: new Date().toISOString()
+                })
+              };
+              this.onmessage(message);
+            }
+          }, 500);
+        },
+        close: function() {
+          console.log('WebSocket connection closed');
+        }
+      };
+      
+      mockWebSocket.onmessage = (event) => {
+        const data = JSON.parse(event.data);
+        console.log('WebSocket message received:', data);
+        
+        // Handle different message types
+        if (data.type === 'price_update') {
+          console.log('Received real-time price update for product ID:', data.productId);
+          // In a real app, we would update the UI with this data
+        }
+      };
+      
+      // Subscribe to product updates
+      mockWebSocket.send(JSON.stringify({
+        type: 'subscribe_product',
+        productId: 1
+      }));
+      
+      return mockWebSocket;
+    };
+    
+    // Initialize WebSocket connection after page loads
+    window.addEventListener('load', () => {
+      const ws = connectWebSocket();
+      
+      // Clean up WebSocket connection when page unloads
+      window.addEventListener('beforeunload', () => {
+        if (ws) ws.close();
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="100" cy="100" r="90" fill="#fff4e6" stroke="#d97706" stroke-width="4"/>
+  
+  <!-- Star shape -->
+  <path d="M100 30 L115 80 L170 80 L125 110 L145 160 L100 130 L55 160 L75 110 L30 80 L85 80 Z" fill="#fbbf24" stroke="#d97706" stroke-width="3"/>
+  
+  <!-- Rocket in center -->
+  <circle cx="100" cy="100" r="25" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+  <path d="M90 115 L90 95 L100 85 L110 95 L110 115 M90 100 L110 100" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M90 115 L85 120 M110 115 L115 120" stroke="#d97706" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Bottom text -->
+  <text x="100" y="180" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#d97706">EARLY ADOPTER</text>
+</svg>
