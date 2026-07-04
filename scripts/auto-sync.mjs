@@ -8,7 +8,7 @@ import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from '
 import { join, relative, dirname } from 'path';
 import { mkdirSync } from 'fs';
 
-const TOKEN = process.env.GITHUB_TOKEN;
+const TOKEN = process.env.GITHUB_TOKEN || process.env.REPLIT_AUTOSYNC;
 const OWNER = 'erickotieno3';
 const REPO = 'hyrisecrown';
 const BRANCH = 'main';
